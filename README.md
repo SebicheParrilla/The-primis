@@ -1,9 +1,51 @@
-Engineering materials
+# The primis
 ====
+## El Equipo ( about the team in self)
+
+Somos el primer equipo de nuestra escuela en el cual habíamos empezado en la categoría de Robot mission. Luego de nuestra primera competencia como grupo cambiamos a la categoría de Robot Sport en la cual fue en la que más tiempo estuvimos trabajando. Ahora Para nuestro tercer año empezaremos a trabajar en esta categoría.
+
+<img src="t-photos\WhatsApp Image 2026-03-04 at 2.11.13 PM.jpeg">
+
+
+
+
+## Photos of the team and the robot
+<img src="t-photos\WhatsApp Image 2026-03-04 at 2.11.13 PM.jpeg">
+
+<table>
+    <tr>
+        <td>
+            <img src="v-photos\IMG (1).jpeg">
+        </td>
+        <td>
+            <img src="v-photos\IMG (2).jpeg">
+        </td>
+                <td>
+        <img src="v-photos\IMG (3).jpeg">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <img src="v-photos\IMG (4).jpeg">
+        </td>
+        <td>
+            <img src="v-photos\IMG (5).jpeg">
+        </td>
+                <td>
+        <img src="v-photos\IMG (6).jpeg">
+        </td>
+    </tr>
+</table>
+## Introdution of the robots and his basic idea of it
+
+
+## Documentary daily/weekly about what happen that day/week and updating it 
+
 
 This repository contains engineering materials of a self-driven vehicle's model participating in the WRO Future Engineers competition in the season 2022.
 
-## Content
+## 
+the primary idea of the car that is going to talk about  in this repository is mixing an electric and pneumatic engine to move the car to do what it is require. We are using mostly Lego parts for the drive train  
 
 * `t-photos` contains 2 photos of the team (an official one and one funny photo with all team members)
 * `v-photos` contains 6 photos of the vehicle (from every side, from top and bottom)
@@ -15,7 +57,8 @@ This repository contains engineering materials of a self-driven vehicle's model 
 
 ## Introduction
 
-_This part must be filled by participants with the technical clarifications about the code: which modules the code consists of, how they are related to the electromechanical components of the vehicle, and what is the process to build/compile/upload the code to the vehicle’s controllers._
+_the primary idea of the car that is going to talk about  in this repository is mixing an electric and pneumatic engine to move the car to do what it is require. We are using mostly Lego parts for the drive train  
+This part must be filled by participants with the technical clarifications about the code: which modules the code consists of, how they are related to the electromechanical components of the vehicle, and what is the process to build/compile/upload the code to the vehicle’s controllers._
 
 ## How to prepare the repo based on the template
 
