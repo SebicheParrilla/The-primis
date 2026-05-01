@@ -17,24 +17,24 @@ Somos el primer equipo de nuestra escuela en el cual habíamos empezado en la ca
 <table>
     <tr>
         <td>
-            <img src="v-photos\IMG (1).jpeg">
+            <img src="v-photos\WhatsApp Image 2026-05-01 at 6.23.43 PM (2).jpeg">
         </td>
         <td>
-            <img src="v-photos\IMG (2).jpeg">
+            <img src="v-photos\WhatsApp Image 2026-05-01 at 6.23.43 PM (1).jpeg">
         </td>
                 <td>
-        <img src="v-photos\IMG (3).jpeg">
+        <img src="v-photos\WhatsApp Image 2026-05-01 at 6.23.44 PM.jpeg">
         </td>
     </tr>
     <tr>
         <td>
-            <img src="v-photos\IMG (4).jpeg">
+            <img src="v-photos\WhatsApp Image 2026-05-01 at 6.23.43 PM.jpeg">
         </td>
         <td>
-            <img src="v-photos\IMG (5).jpeg">
+            <img src="v-photos\WhatsApp Image 2026-05-01 at 6.23.44 PM (1).jpeg">
         </td>
                 <td>
-        <img src="v-photos\IMG (6).jpeg">
+        <img src="v-photos\WhatsApp Image 2026-05-01 at 6.23.43 PM (3).jpeg">
         </td>
     </tr>
 </table>
