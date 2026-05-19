@@ -42,6 +42,6 @@ El equipo consiste de tres miembros, Sebastián J. Parrilla (AKA Shebi), Joseph 
 ## A cerca de AIZA (Anti Insult Zapping Automaton)
  La idea principal de nuestro robot se basa en utilizar tanto como un motor neumático como un motor eléctrico para poner en movimiento el robot. Para esto, se utilizarán piezas hechas en base al uso de un "3D printer” y en adicción algunas piezas de Lego. Por otro lado, se dará el uso de una cámara para la toma de decisiones que el robot optará por hacer. Para esto el robot tendrá en adicción otros datos obtenidos por censores los cuales tomará en cuenta para moverse de la manera más optima posible.
 
- The name is an inside joke within our team. We, by we I mean myself (Joseph), and Carlos, insulted the robot back when we started then competitions and the robot had no way of defending itself, however this robot can be grabed, moved, and touched perfectly fine unless you insult it in witch case it will shock you the next time you touch it.
+ The name is an inside joke within our team. We, by we I mean myself (Joseph), and Carlos, insulted the robot back when we started the competitions ussing a robot primaraly made of lego and the spike hub, the robot had no way of defending itself, however this robot can be grabed, moved, and touched perfectly fine unless you insult it in witch case it will shock you the next time you touch it.
 
 ## Documentary daily/weekly about what happen that day/week and updating it 
