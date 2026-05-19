@@ -1,7 +1,7 @@
 # The primis
 
 ## El equipo 
-Somos el primer equipo de nuestra escuela en el cual habíamos empezado en la categoría de Robot mission. Luego de nuestra primera competencia como grupo cambiamos a la categoría de Robot Sport en la cual fue en la que más tiempo estuvimos trabajando. En esta estuvimos trabajando 2 años cosecutivos en los cuales logramos progresar como equipo. Además, en la misma llegamos a las competencias mundiales donde llegamos a las semifinales. Ahora, ya mencionado lo anterior, para nuestro tercer año empezaremos a trabajar en esta categoría. 
+Somos el primer equipo de nuestra escuela en el cual habíamos empezado en la categoría de Robot mission. Luego de nuestra primera competencia como grupo cambiamos a la categoría de Robot Sport en la cual fue en la que más tiempo estuvimos trabajando. En esta estuvimos trabajando 2 años cosecutivos en los cuales logramos progresar como equipo. Además, en la misma llegamos a las competencias mundiales donde llegamos a las semifinales. Ahora, ya mencionado lo anterior, para nuestro tercer año empezaremos a trabajar en esta categoría. Nuni estaba aqui!
 
 ## [Photos of the team and the robot](t-photos)
 
