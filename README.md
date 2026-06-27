@@ -1,7 +1,8 @@
 # The primis
 
-## El equipo (about the team it self)
-Somos el primer equipo de nuestra escuela en el cual habíamos empezado en la categoría de Robot mission. Luego de nuestra primera competencia como grupo cambiamos a la categoría de Robot Sport en la cual fue en la que más tiempo estuvimos trabajando. Ahora Para nuestro tercer año empezaremos a trabajar en esta categoría.
+
+"Primis" is a word play of "Primus", which means "first" in latin. We picked this name because we where the first 3 in our school, Benhamin Harrison Vocational to join the puertorrican WRO delegation.After our first competition as a group, we switched to the Robot Sport category, where we spent the most time working. Now, for our third year, we took the challenge of the future engeneers category, mentored by our coach, the great York E. Jackobs.
+
 
 ## [Photos of the team and the robot](t-photos)
 
@@ -13,34 +14,36 @@ Somos el primer equipo de nuestra escuela en el cual habíamos empezado en la ca
 
 ------------------
 
-# [V-Photo](v-photos)
+# [Vehicle-Photos](v-photos)
 <table>
     <tr>
         <td>
-            <img src="v-photos\IMG (1).jpeg">
+            <img src="x">
         </td>
         <td>
-            <img src="v-photos\IMG (2).jpeg">
+            <img src="x">
         </td>
                 <td>
-        <img src="v-photos\IMG (3).jpeg">
+        <img src="x">
         </td>
     </tr>
     <tr>
         <td>
-            <img src="v-photos\IMG (4).jpeg">
+            <img src="x">
         </td>
         <td>
-            <img src="v-photos\IMG (5).jpeg">
+            <img src="x">
         </td>
                 <td>
-        <img src="v-photos\IMG (6).jpeg">
+        <img src="x">
         </td>
     </tr>
 </table>
 
-## Introdution of the robots and the basic idea of it
-The primary idea of the car that is going to talk about  in this repository is mixing an electric and pneumatic engine to move the car to do what it is require. We are using mostly Lego parts for the drive train  
+## Powertrain principle
 
-## Documentary daily/weekly about what happen that day/week and updating it 
-This repository contains engineering materials of a self-driven vehicle's model participating in the WRO Future Engineers competition in the season 2022.
+The primary idea of the vehicle is using compressed air as a clean energy source to move the vehicle, and to maximise efficiency we will use a 'E-CVT', a planetary gear transmission used in gasoline cars to maximize fuel eficiency on hybrid vehicles.
+
+## Direction principle
+
+We will use a camera combined with 3 distance sensors to determine the actions of the robot.
