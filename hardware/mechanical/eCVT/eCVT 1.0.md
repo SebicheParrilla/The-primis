@@ -1,7 +1,9 @@
-# E-CVT 1.0
+# eCVT 1.0
 > Retrospective log: This entry's information was digitized from the physical engineering notebook on 2026-06-27.
 
 Our first attempt of making our planetary gear transmission, this was mostly an attempt that tought us how to use fusion360, how our 3d printer worked and introduced us to gear ratio calculations.
+
+We printed some parts and already saw some problems, so we didn't fully asemble it.
 
 <img src="hardware\photos\IMG_1895.jpg">
 
@@ -14,9 +16,7 @@ Our first attempt of making our planetary gear transmission, this was mostly an 
 - P (Planet Gear) = 18
 
 
-This is where we learned how to make planetary gearboxes with proper meshing, we used this formula.
-- (R + S) / (number of planets) = x
-(x) must be 1 for it to have proper meshing.
+
 
 ## Transmission Output/Input
 
@@ -27,6 +27,8 @@ Our plan was to make the pneumatic engines input on the sun gear, the electric m
 ## Improvements proyected for the E-CVT 2.0
 
 Change the electric motor input to the ring gear, and the output to be the planetary carrier, this allows us to be able to move the car in the event of the pneumatic system failing.
+
+We knew we it would be dificult to fit a big transmission on the car, so making things more compact and smaller will allways be a target.
 
 
 
