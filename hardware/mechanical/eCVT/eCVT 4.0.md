@@ -1,8 +1,9 @@
 # eCVT 4.0
 > Retrospective log: This entry's information was digitized from the physical engineering notebook on 2026-06-28.
 
-
-<img src="hardware\photos\ECVT3.jpg">
+<div align= "center">
+<img src="../../photos\IMG_2879.jpg" width=350>
+</div>
 
 ## Specs
 - Module: 2

@@ -5,8 +5,9 @@ Our first attempt of making our planetary gear transmission, this was mostly an 
 
 We printed some parts and already saw some problems, so we didn't fully asemble it.
 
-<img src="hardware\photos\IMG_1895.jpg">
-
+<div align= "center">
+<img src="../../photos\IMG_1895.jpg" width=350>
+</div>
 ## Specs
 - Module: 2
 - Pressure angle: 20°

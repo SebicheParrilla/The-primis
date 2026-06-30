@@ -7,7 +7,10 @@ You can change a gear's size by making the module smaller, but you can only go s
 
 by reducing the number of teeth bt not the module you'll have the same size teeth but on a smaller radius gear.
 
-<img src="hardware\photos\ECVT3.jpg">
+<div align= "center">
+<img src="../../photos/ECVT3.jpg" width=350>
+</div>
+
 
 ## Specs
 - Module: 2
