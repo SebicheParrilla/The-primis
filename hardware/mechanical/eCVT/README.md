@@ -56,7 +56,7 @@ In this system:
 A consistent pressure angle is required for all meshing gears to avoid binding or wear.
 
 
-## Meshing & Design Constraint Formula
+## Proper meshing formula
 
 To ensure correct gear interaction and prevent mechanical interference, the system follows:
 
