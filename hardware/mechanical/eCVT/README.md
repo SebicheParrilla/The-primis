@@ -10,6 +10,7 @@ The biggest advantage to this transmission is being able to combine two inputs o
 
 - have smooth acceleration and deceleration, because of no constraits over fixed gear ratios
 - higher eficiency because of allways being at the perfect gear ratio
+- eliminate the need of a clutch to engage or disengage energy
 
 
 ## Gear System Description

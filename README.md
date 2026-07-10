@@ -1,4 +1,4 @@
-# The primis
+# The Primis
 
 
 "Primis" is a word play of "Primus", which means "first" in latin. We picked this name because we where the first 3 in our school, Benhamin Harrison Vocational to join the puertorrican WRO delegation.After our first competition as a group, we switched to the Robot Sport category, where we spent the most time working. Now, for our third year, we took the challenge of the future engeneers category, mentored by our coach, the great York E. Jackobs.
