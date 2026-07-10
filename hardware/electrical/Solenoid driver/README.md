@@ -1,4 +1,4 @@
-# Electronic Solenoid Valve
+# Mosfet Driver Board
 
 Our ASMS uses a [electronic valve](e-valve.md) to interrupt the compressed air being fed to the pneumatic engine, This allows us to turn the engine ON/OFF.
 
@@ -10,6 +10,12 @@ When our [electronic valve](e-valve.md) is actuated, (letting air through) it ha
 
 
 ## Mosfet Solenoid Driver
+
+<div align= "center">
+<img src="../../../hardware\photos\mosfetdriver.jpg" width=350>
+</div>
+
+--- 
 
 To fix this problem we need to actuate a high current circuit with a small current circuit, and the following circuit makes this possible.
 <div align= "center">
