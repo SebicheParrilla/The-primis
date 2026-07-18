@@ -1,4 +1,4 @@
-## eCVT logic coding
+## eCVT logic coding 5-26-2026
 > Retrospective log: This entry's information was digitized from the physical engineering notebook on 2026-07-10.
 
 The transmission motor as well as the flywheel on the pneumatic engine have encoders, these count the pulses on a disk that is rotating, calculating how many slots per revolution (360° spin of a axle) and its speed.
