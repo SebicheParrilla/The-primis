@@ -24,7 +24,7 @@ To fix this problem we need to actuate a high current circuit with a small curre
 
 
 
-this circuit uses a MOSFET, (Metal Oxide Semiconductor Field Effect Transistor) labled **M1** in the circuit diagram, this has many configurations, but how we utilized it was aplying 5V to the Gate, to interrupt the Drain current, this means that when theres a 5V signal in the get, the e-valve will not recieve current, therefore be closed and not let air pass.
+this circuit uses a [MOSFET](../../../hardware\electrical\Solenoid_driver\mosfet.md), labled **M1** in the circuit diagram, this has many configurations, but how we utilized it was aplying 5V to the Gate, to interrupt the Drain current, this means that when theres a 5V signal in the get, the e-valve will not recieve current, therefore be closed and not let air pass.
 
 ## Gate driver
 
