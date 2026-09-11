@@ -1,0 +1,46 @@
+# Principles of gear creation in CAD softwares
+
+## Gear Module (m)
+
+The module defines the size of the gear teeth:
+
+$$
+m = \frac{d}{z}
+$$
+
+Where:
+- `m` = module
+- `d` = pitch diameter
+- `z` = number of teeth
+
+Module directly contributes to a gears size and shape.
+
+
+## Pressure Angle
+
+The pressure angle is the angle at which force is transmitted between gear teeth.
+
+In this system:
+- Standard pressure angle: **20°**
+- Ensures smooth contact between gear teeth
+- Reduces friction and improves efficiency
+- Improves load distribution in planetary systems
+
+A consistent pressure angle is required for all meshing gears to avoid binding or wear.
+
+
+## Proper meshing formula for planetary gear sets
+
+To ensure correct gear interaction and prevent mechanical interference, the system follows:
+
+(R + S) / (number of planets) = x
+
+
+
+
+Where:
+- `R` = ring gear tooth influence
+- `S` = sun gear tooth influence
+- `P` = number of planets
+
+ (x) must be 1 for it to have proper meshing.

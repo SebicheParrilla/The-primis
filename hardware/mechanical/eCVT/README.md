@@ -2,15 +2,54 @@
 
 ## Overview
 
-This folder documents the design and theory behind the custom eCVT (electronic Continuously Variable Transmission) system used in the robot. The system is based on a planetary gear set combined with a pneumatic power source and controlled mechanical modulation.
+This folder documents the design and theory behind the custom eCVT (electronic Continuously Variable Transmission) system used in the robot. The system is based on a planetary gear set combined with a pneumatic power source and controlled mechanical modulation with an electric motor.
 
-The pneumatic engine is difficult to control directly. The eCVT allows the robot to stabilize or control the output speed by changing the motion of the ring gear.
+The pneumatic engine is difficult to control directly. The eCVT allows the robot to control the output speed by changing the motion of the ring gear.
 
-The biggest advantage to this transmission is being able to combine two inputs on to one output, this allows you to:
 
-- have smooth acceleration and deceleration, because of no constraits over fixed gear ratios
-- higher eficiency because of allways being at the perfect gear ratio
-- eliminate the need of a clutch to engage or disengage energy
+### Term glossary 
+
+[Brake Specific Fuel Consumption (BSFC)]()
+## Why an eCVT for our pneumatic engine?
+
+### First, lets see the advantages.
+
+<table>
+<tr>
+<th width="50%">fixed ratio transmissions</th>
+<th width="50%">eCVT</th>
+</tr>
+
+<tr>
+<td>Are constrained to a fixed gear ratio per gear, thus in order to gain speed you need theengine to rev higher than the most efecient BSFC.</td>
+<td>eCVT's allow you to have the exact gear ratio you need in order to have the best BSFC. </td>
+</tr>
+
+<tr>
+<td>The Pneumatic engine's speed is hard to control eficiently and without waisting energy. </td>
+<td>Allows you to keep the engine in the most eficient BSFC, and change the robots speed with the electric motor.</td>
+</tr>
+
+<tr>
+<td> Need a clutch to engage and disengage power from the weels in order to change gears. </td>
+<td>No need for gear changing thus no need for power disengaging.</td>
+</tr>
+
+<tr>
+<td>Hard to have a smooth acceleration and deceleration.</td>
+<td>Extremely easy to have a smooth acceleration and deceleration.</td>
+</tr>
+
+
+
+</table>
+
+### Important tradeoffs
+
+- In order to control the robot's speed, the microcontroller needs reliable measurements of both the pneumatic engine and electric motor speeds. Errors in either measurement can cause incorrect transmission control.
+-   A fixed-ratio drivetrain is mechanically simpler and the eCVT depends more on software to coordinate the pneumatic engine, electric motor, and transmission.
+- More failure points like bearings, gears, friction points and sensors.
+
 
 
 ## Gear System Description
@@ -26,49 +65,4 @@ The eCVT uses a planetary gear system, consisting of:
 
 This configuration allows variable torque distribution depending on which elements are fixed or driven.
 
-# Principles of gear creation in CAD softwares
 
-## Gear Module (m)
-
-The module defines the size of the gear teeth:
-
-\[
-m = \frac{d}{z}
-\]
-
-Where:
-- `m` = module
-- `d` = pitch diameter
-- `z` = number of teeth
-
-Module directly contributes to a gears size and shape.
-
-
-## Pressure Angle
-
-The pressure angle is the angle at which force is transmitted between gear teeth.
-
-In this system:
-- Standard pressure angle: **20°**
-- Ensures smooth contact between gear teeth
-- Reduces friction and improves efficiency
-- Improves load distribution in planetary systems
-
-A consistent pressure angle is required for all meshing gears to avoid binding or wear.
-
-
-## Proper meshing formula
-
-To ensure correct gear interaction and prevent mechanical interference, the system follows:
-
-(R + S) / (number of planets) = x
-
-
-
-
-Where:
-- `R` = ring gear tooth influence
-- `S` = sun gear tooth influence
-- `P` = number of planets
-
- (x) must be 1 for it to have proper meshing.
