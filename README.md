@@ -7,7 +7,6 @@ We are a team from Puerto Rico that tackled for the first time the challenge of 
 </div>
 
 
-
 ### Team Members,  From Left to Right:
 
 1. Joseph Macias Diaz
@@ -15,9 +14,63 @@ We are a team from Puerto Rico that tackled for the first time the challenge of 
 3. Sebastian J. Parrilla
 4. Carlos A. Espada Rivera
 
-### [More about us here](t-photos/README.md)
+### [t-photos's README](t-photos/README.md)
 # Anti Insult Zapping Automaton (A.I.Z.A)
-AIZA is a robot that counts with an electropneumatic hybrid drive train and vision-based navigation
+AIZA is our autonomous robot featuring an electropneumatic hybrid drivetrain and vision-based navigation developed for the **WRO Future Engineers 2026** competition.
+
+<div align= "center">
+<img src="v-photos\Past_iterations\AIZA 2.1.jpg
+"width=450>
+
+(Placeholder)
+</div>
+
+
+Unlike a conventional electric drivetrain, AIZA uses a pneumatic engine
+as its primary source of mechanical power. Electrical systems are used
+to control and monitor the drivetrain, while a **electronic continuously variable transmission** allows the pneumatic power to be adapted eficiently to the robot's operating demands and conditions.
+
+The development of AIZA focuses on investigating how these systems can
+be integrated into an autonomous competition robot through iterative
+design, testing, and experimentation.
+
+--- 
+
+### The Challenge
+A conventional electric drivetrain is simpler, more efficient, easier to control, and generally better suited for an autonomous competition robot than a penumatic engine. Rather than treating the disadvantages of pneumatic power as reasons to avoid it, we treated them as engineering challenges.
+
+
+But we knew that the limitations of a pneumatic drivetrain were not necessarily limitations of the pneumatic engine alone, but of how the entire powertrain was designed around it.
+
+### Important tradeoffs
+
+The development of AIZA focuses on several of the known challenges
+associated with pneumatic power:
+
+<table>
+<tr>
+<th width="50%">Challenge</th>
+<th width="50%">Our Approach</th>
+</tr>
+
+<tr>
+<td>Hard to control the pneumatic engine's speed with a reliable, leak free, compact, and lightweight way.</td>
+<td>An eCVT allows you to keep the pneumatic engine on a fuel eficient speed while changing the speed of the robot with the secondary electric motor. </td>
+</tr>
+
+<tr>
+<td>A system capable of continuously supplying compressed air to the pneumatic engine would be expensive, heavy, and consume valuable space on the robot.</td>
+<td>Rather than supplying compressed air continuously, we designed the robot around stored compressed air using lightweight, high pressure tanks and a way to regulate the air, allowing the pneumatic engine to operate independently of an onboard compressor.</td>
+</tr>
+
+<tr>
+<td> placeholder. </td>
+<td>placeholder.</td>
+</tr>
+
+</table>
+
+
 
 # Systems Architecture
 
