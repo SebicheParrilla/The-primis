@@ -27,34 +27,26 @@ AIZA is our autonomous robot featuring an electropneumatic hybrid drivetrain and
 
 
 Unlike a conventional electric drivetrain, AIZA uses a pneumatic engine
-as its primary source of mechanical power. Electrical systems are used
-to control and monitor the drivetrain, while a **electronic continuously variable transmission** allows the pneumatic power to be adapted eficiently to the robot's operating demands and conditions.
+as its primary source of mechanical power. Multiple systems, like the Air Supply and Management System, sensor system and electrical system are used to control and monitor the drivetrain, while a **electronic continuously variable transmission** allows the pneumatic power to be adapted eficiently to the robot's operating demands and conditions.
 
-The development of AIZA focuses on investigating how these systems can
-be integrated into an autonomous competition robot through iterative
-design, testing, and experimentation.
 
 --- 
 
-### The Challenge
+### The challenges of a pneumatic engine in a autonomous robot
 A conventional electric drivetrain is simpler, more efficient, easier to control, and generally better suited for an autonomous competition robot than a penumatic engine. Rather than treating the disadvantages of pneumatic power as reasons to avoid it, we treated them as engineering challenges.
 
 
 But we knew that the limitations of a pneumatic drivetrain were not necessarily limitations of the pneumatic engine alone, but of how the entire powertrain was designed around it.
 
-### Important tradeoffs
-
-The development of AIZA focuses on several of the known challenges
-associated with pneumatic power:
 
 <table>
 <tr>
-<th width="50%">Challenge</th>
+<th width="50%">Disadvantage</th>
 <th width="50%">Our Approach</th>
 </tr>
 
 <tr>
-<td>Hard to control the pneumatic engine's speed with a reliable, leak free, compact, and lightweight way.</td>
+<td>Hard to control the pneumatic engine's speed with a reliable, leak free, compact, and lightweight solution.</td>
 <td>An eCVT allows you to keep the pneumatic engine on a fuel eficient speed while changing the speed of the robot with the secondary electric motor. </td>
 </tr>
 
@@ -63,12 +55,16 @@ associated with pneumatic power:
 <td>Rather than supplying compressed air continuously, we designed the robot around stored compressed air using lightweight, high pressure tanks and a way to regulate the air, allowing the pneumatic engine to operate independently of an onboard compressor.</td>
 </tr>
 
+
+
 <tr>
 <td> placeholder. </td>
 <td>placeholder.</td>
 </tr>
 
 </table>
+
+
 
 
 
