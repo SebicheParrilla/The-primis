@@ -44,6 +44,8 @@ The pneumatic engine is difficult to control directly. The eCVT allows the robot
 
 </table>
 
+---
+
 ### Important tradeoffs
 
 - In order to control the robot's speed, the microcontroller needs reliable measurements of both the pneumatic engine and electric motor speeds. Errors in either measurement can cause incorrect transmission control.

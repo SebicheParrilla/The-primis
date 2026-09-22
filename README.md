@@ -29,6 +29,8 @@ AIZA is our autonomous robot featuring an electropneumatic hybrid drivetrain and
 Unlike a conventional electric drivetrain, AIZA uses a pneumatic engine
 as its primary source of mechanical power. Multiple systems, like the Air Supply and Management System, sensor system and electrical system are used to control and monitor the drivetrain, while a **electronic continuously variable transmission** allows the pneumatic power to be adapted eficiently to the robot's operating demands and conditions.
 
+### [The complete guide to build your very own AIZA here.]()
+
 
 --- 
 
@@ -63,6 +65,8 @@ But we knew that the limitations of a pneumatic drivetrain were not necessarily 
 </tr>
 
 </table>
+
+---
 
 
 
