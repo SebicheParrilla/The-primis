@@ -34,6 +34,18 @@ as its primary source of mechanical power. Multiple systems, like the Air Supply
 
 --- 
 
+
+
+
+
+
+# Systems Architecture
+
+all systems explained visualy in a diagram
+
+# Mechanical
+
+
 ### The challenges of a pneumatic engine in a autonomous robot
 A conventional electric drivetrain is simpler, more efficient, easier to control, and generally better suited for an autonomous competition robot than a penumatic engine. Rather than treating the disadvantages of pneumatic power as reasons to avoid it, we treated them as engineering challenges.
 
@@ -60,37 +72,43 @@ But we knew that the limitations of a pneumatic drivetrain were not necessarily 
 
 
 <tr>
-<td> placeholder. </td>
+<td> Pneumatic engine can only spin a certain direction, depending of how timing is set up.  </td>
 <td>placeholder.</td>
 </tr>
 
 </table>
 
----
 
-
-
-
-
-# Systems Architecture
-
-all systems explained visualy in a diagram
-
-# Mechanical
-
-Diagram of diferent components and Written overview
 
 # Electrical
 
-Diagram and component  verview
 
-# Sensors
 
-Diagram and component overview
+- Diagram and component  verview, current calculations
+- Safety 
 
-# Software 
-Diagram and overview
-(stater machine) (calibration)
-# Navigation strategy
- overview
+
+
+
+# Sensors, Software and Strategy
+
+#### Before Starting
+Complying with the rules, the robot switches to ON with one switch, and initialices the program with one button, once the robot is powered, it initializes UART communication. The Cytron waits until the RaspberryPi boots and sends a "1" as a "ready" signal, after this the RaspberryPi waits until we initialize the program with one of the on-board buttons of the Cytron, when pressed, the Cytron sends a "1" as a "Start" command, which inicializes the vision program, and resets the yaw angle to 0.
+
+#### Navigation State Machine
+The robot's IMX708 camera detects line colors and wall boundries, we use this to determine how far the blue or orange line are and which comes first, since its a queue for what direction the robot should go. 
+
+#### Speed State Machine
+Depending on the Navigation State Machine value, the RaspberryPi will send the Cytron a speed value of 1-7, using the electric motor encoder and pneumatic engine flywheel encoder the Cytron calculates the correct gear ratio to move the at the speed the RaspberryPi is commanding.
+
+#### After Starting
+ After the Cytron sends the start command to the RaspberryPi, the robot goes forward, the camera logic traces a line from the bottom center of the image until it reaches a blue or orange line, it will record the first line that it encounters and keeps track of the distance in pixels with how long the line is, when the line length in pixels is less than 50 pixels, it saves  the yaw angle and then turns, when the yaw angle is more than 90 it recenters and then keeps going straight, then we repeat that 11 times to complete the open challenge.
+
+
+
+
+
+
+
+
 # Glossary
