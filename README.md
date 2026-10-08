@@ -32,16 +32,21 @@ as its primary source of mechanical power. Multiple systems, like the Air Supply
 ### [The complete guide to build your very own AIZA here.]()
 
 
---- 
-
-
-
-
 
 
 # Systems Architecture
 
-all systems explained visualy in a diagram
+AIZA is divided into four main systems that work together as a single autonomous platform:
+
+ **Mechanical System** - Converts pneumatic and electrical power into controlled and measured wheel motion through the drivetrain.
+
+ **Air Supply and Management System** - Stores compressed air, regulates the pressure, and supplies the pneumatic engine.
+
+ **Electrical System** - Provides power to the Raspberry Pi, Cytron Motion 2350, sensors, actuators, and the electric transmission motor.
+ 
+ **Sensing and Control System** - Uses the camera, IMU, and encoders to determine the robot's position, orientation, and drivetrain state.
+
+The Raspberry Pi acts as the desition maker, processing the camera and navigation data and commanding the Cytron Motion 2350. The Cytron handles the drivetrain control, including the electric transmission motor, steering servo, pneumatic engine solenoid, and encoder.
 
 # Mechanical
 
@@ -73,7 +78,7 @@ But we knew that the limitations of a pneumatic drivetrain were not necessarily 
 
 <tr>
 <td> Pneumatic engine can only spin a certain direction, depending of how timing is set up.  </td>
-<td>placeholder.</td>
+<td>Instead of reversing the pneumatic engine, we designed the drivetrain so that reverse motion is handled electrically through the eCVT. This allows the pneumatic engine to remain optimized for forward operation while maintaining bidirectional control of the robot.</td>
 </tr>
 
 </table>
