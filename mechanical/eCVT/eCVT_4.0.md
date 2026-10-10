@@ -2,7 +2,7 @@
 > Retrospective log from March 20, 2026: This entry's information was digitized from the physical engineering notebook.
 
 <div align= "center">
-<img src="../../photos/IMG_2879.jpg" width=350>
+<img src="../../media/photos/IMG_2879.jpg" width=350>
 </div>
 
 ## Specs
@@ -15,7 +15,7 @@
 - OR (Outside Ring Gear) = 40
 
 
-This was our first complete version that was equiped with everything the vehicle needed, we used this transmission for the first movable version of the vehicle, [AIZA 1.0](../../../hardware/vehicle%20iterations/AIZA%201.0.md), which we used for the Pueto Rico National Robot Olympiad.
+This was our first complete version that was equiped with everything the vehicle needed, we used this transmission for the first movable version of the vehicle, [AIZA 1.0](../../development_process/vehicle_iterations/AIZA_1.0.md), which we used for the Pueto Rico National Robot Olympiad.
 
 ## Improvements
 

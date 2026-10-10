@@ -4,7 +4,7 @@
 This was our first actual ecvt that was fully asembled, it helped to test our first proof of concepts with the first vertions of the pneumatic engine.
 
 <div align= "center">
-<img src="../../photos/ECVT2.jpg" width=350>
+<img src="../../media/photos/ECVT2.jpg" width=350>
 </div>
 
 ## Specs

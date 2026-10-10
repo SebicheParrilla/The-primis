@@ -1,9 +1,9 @@
 # Solenoid Driver Board
 
-Our [ASMS](../../../../hardware/mechanical/Pneumatics/ASMS/README.md) uses a [electronic valve](e-valve.md) to interrupt the compressed air being fed to the pneumatic engine, This allows us to turn the engine ON/OFF.
+Our [ASMS](../../../mechanical/Pneumatics/ASMS/README.md) uses a [electronic valve](e-valve.md) to interrupt the compressed air being fed to the pneumatic engine, This allows us to turn the engine ON/OFF.
 
 ## Voltage problem
-This e-valve uses 12V, which is obviously more than our 7.4V batteries, so we used a [voltage booster](../../Cytron_Motion_2350_Pro\voltage_booster.md) to have a 12V power supply for our electronic valve.
+This e-valve uses 12V, which is obviously more than our 7.4V batteries, so we used a [voltage booster](../voltage_booster.md) to have a 12V power supply for our electronic valve.
 
 ## Current problem
 When our electronic valve is actuated, (letting air through) it has a current draw of aprox. 600mA, if we were to connect the valve directly to a pin of the microcontroller, the microcontroller pin would heat up and possibly get toasted, since a safe amount of current for a pin would be 40mA.
@@ -12,14 +12,14 @@ When our electronic valve is actuated, (letting air through) it has a current dr
 ## Mosfet Solenoid Driver
 
 <div align= "center">
-<img src="../../../../hardware/photos/mosfetdriver.jpg" width=350>
+<img src="../../../media/photos/mosfetdriver.jpg" width=350>
 </div>
 
 --- 
 
 To fix this problem we need to actuate a high current circuit with a small current circuit, and the following circuit makes this possible.
 <div align= "center">
-<img src="../../../../hardware/photos/MosfetCircuit.PNG" width=350>
+<img src="../../../media/photos/MosfetCircuit.PNG" width=350>
 </div>
 
 

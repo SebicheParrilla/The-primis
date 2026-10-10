@@ -2,7 +2,7 @@
 > Retrospective log from February 28, 2026: This entry's information was digitized from the physical engineering notebook.
 ## Problem
 
-The [V1.0  pneumatic engine](../hardware/mechanical/Pneumatics/Penumatic_Engine/1.0.md) could only operate for approximately **7 seconds** using one air tank charged to **40 PSI**.
+The [V1.0  pneumatic engine](../../mechanical/Pneumatics/Penumatic_Engine/1.0.md) could only operate for approximately **7 seconds** using one air tank charged to **40 PSI**.
 
 This runtime was too short to complete a full WRO run, so we investigated ways to increase the amount of stored compressed air without increasing tank pressure.
 

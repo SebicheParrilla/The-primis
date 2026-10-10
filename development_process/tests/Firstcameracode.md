@@ -2,7 +2,7 @@
 > Retrospective log from July 13, 2026: This entry's information was digitized from the physical engineering notebook.
 
 
-The first camera program developed for the Raspberry Pi was [camworking.py](../../../code/srs/camworking.py).
+The first camera program developed for the Raspberry Pi was [camworking.py](../../media/srs/camworking.py).
 
 ```python
 from picamera2 import Picamera2
@@ -33,5 +33,5 @@ picam2.stop()
 cv2.destroyAllWindows()
 ```
 
-This code captured the frames from the [OV5647](../../../hardware\electrical\Camera\OV5647.md),  and displayed them in a preview.
+This code captured the frames from the [OV5647](../../electrical/Raspberry_π_3B+/Camera/OV5647.md),  and displayed them in a preview.
 

@@ -18,14 +18,14 @@ From left to right
 * Sebastián J. Parrilla
 
 <div align= "center">
-<img src="../t-photos/photos/Firstphoto.jpeg" width=550>
+<img src="media/team_photos/Firstphoto.jpeg" width=550>
 </div>
 
 ## WRO 2023 Panama
 We got an amaizing experiance and got to know a foreign country for the first time for the three of us even though we didn't win nor qualify for the play-offs of the RoboSports championship, we won amaizing experience and knowledge.
 
 <div align= "center">
-<img src="../t-photos/photos/WRO panama.jpg" width=550>
+<img src="media/team_photos/WRO panama.jpg" width=550>
 </div>
 
 ## PRNRO 2024
@@ -35,7 +35,7 @@ We got an amaizing experiance and got to know a foreign country for the first ti
 <tr>
 <td width="50%" align="center">
 
-<img src="../t-photos/photos/JAckobscelebrando.jpg" width="300">
+<img src="media/team_photos/JAckobscelebrando.jpg" width="300">
 
 </td>
 <td width="60%" valign="top">
@@ -54,7 +54,7 @@ After a hard national competition at the PRNRO in May 2024, we achieved first pl
 <tr>
 <td width="50%" align="center">
 
-<img src="../t-photos/photos/Primispodium.jpg" width="300">
+<img src="media/team_photos/Primispodium.jpg" width="300">
 
 </td>
 <td width="60%" valign="top">
@@ -68,13 +68,13 @@ The  October 2024 WRO Open Championship for the Americas was held in Puerto Rico
 </table>
 <div *align*="left">
 <div align= "center">
-<img src="../t-photos/photos/CarlosSebaOpen.jpg" width=650>
+<img src="media/team_photos/CarlosSebaOpen.jpg" width=650>
 </div>
 
 ## WRO 2024 Turkey
 In the WRO of 2024 we got a trully unforgetable experience, we were able to reach the play-off bracket and were defeated by the Saudi-Arabian team JEFF ROBOTICS, we went home with a top 32 place internationally.
 <div align= "center">
-<img src="../t-photos/photos/PrimisTurkey.JPG" width=500>
+<img src="media/team_photos/PrimisTurkey.JPG" width=500>
 </div>
 
 
@@ -89,7 +89,7 @@ In the WRO of 2024 we got a trully unforgetable experience, we were able to reac
 <tr>
 <td width="50%" align="center">
 
-<img src="../t-photos/photos/CarlosBloque.jpg" width="300">
+<img src="media/team_photos/CarlosBloque.jpg" width="300">
 
 
 </td>
@@ -103,7 +103,7 @@ Due to changes in our circumstances, as all of the original members had graduate
 </tr>
 </table>
 <div align= "center">
-<img src="../t-photos/photos/ELBLOQUElego.jpg" width=630>
+<img src="media/team_photos/ELBLOQUElego.jpg" width=630>
 </div>
 
 

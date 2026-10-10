@@ -2,7 +2,7 @@
 
 
 <div align= "center">
-<img src="../../../hardware/photos/photointerruptor.jpg" width=250>
+<img src="../../media/photos/photointerruptor.jpg" width=250>
 </div>
 
 ---

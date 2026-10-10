@@ -2,7 +2,7 @@
 > Retrospective log from May 14, 2026: This entry's information was digitized from the physical engineering notebook.
 
 <div align= "center">
-<img src="../../photos/ecvt4vs1.jpg" width=350>
+<img src="../../media/photos/ecvt4vs1.jpg" width=350>
 
 eCVT 1.0 vs eCVT 5.0
 </div>

@@ -11,11 +11,11 @@ This allows us to:
 
 We made a test bench to make the program for the eCVT logic. Using an electric motor as a simulator of the pneumatic engine without the need of refilling the air tanks, we will test the combination of encder values and power supply to the transmission motor to cancel out the movement of both thus making the car not move.
 
-[Vehicle Neutral Hold Code](../../srs/EcvtLogicNeutral5262026.py)
+[Vehicle Neutral Hold Code](../../media/srs/EcvtLogicNeutral5262026.py)
 
 Then we made a code testing the vehicles gradual acceleration, this demonstrates how reliable the optic sensors are.
 
-[Vehicle Acceleration Code](../../srs/EcvtLogicForward5262026.py)
+[Vehicle Acceleration Code](../../media/srs/EcvtLogicForward5262026.py)
 
 We concluded that with a good program we could use reliably both sensors allthough the flywheel encoder worked almost perfectly compared to the motor encoder which had sudden spikes of values, we think it could relate to a smaller sample size since the disk only has 9 slots, and the flywheel has 16, this means theres less information being read per revolution.
 

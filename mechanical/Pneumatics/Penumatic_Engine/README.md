@@ -17,7 +17,7 @@ that maintains continuous rotation.
 <tr>
 <td width="50%" align="center">
 
-<img src="../../../photos/legopneumaticcylinder.jpg" width="300">
+<img src="../../../media/photos/legopneumaticcylinder.jpg" width="300">
 
 **Lego Piston**
 </td>
@@ -35,7 +35,7 @@ Lego's pneumatic pistons have two inlets, depending in which inlet you apply air
 <tr>
 <td width="50%" align="center">
 
-<img src="../../../photos/LegoAirSwitch.webp" width="300">
+<img src="../../../media/photos/LegoAirSwitch.webp" width="300">
 
 **Lego Pneumatic Valve**
 </td>
@@ -57,7 +57,7 @@ Lego's pneumatic pistons have two inlets, depending in which inlet you apply air
 <tr>
 <td width="50%" align="center">
 
-<img src="../../../photos\Stroke22_croppedpainted.jpg" width="300">
+<img src="../../../media/photos/Stroke22_croppedpainted.jpg" width="300">
 
 **0° - 90°**
 </td>
@@ -74,7 +74,7 @@ In this case, if we were to look at the engine from the front, (facing the black
 <tr>
 <td width="50%" align="center">
 
-<img src="../../../photos\Stroke33_croppedpainted.jpg" width="300">
+<img src="../../../media/photos/Stroke33_croppedpainted.jpg" width="300">
 
 **90° - 180°**
 </td>
@@ -94,7 +94,7 @@ To counter this, one must install a flywheel specially on 1 cylinder engines so 
 <tr>
 <td width="50%" align="center">
 
-<img src="../../../photos\Stroke44_croppedpainted.jpg" width="300">
+<img src="../../../media/photos/Stroke44_croppedpainted.jpg" width="300">
 
 **180° - 270°**
 </td>
@@ -110,7 +110,7 @@ Now the pushrod has reached its most upward position, and the valve has opened t
 <tr>
 <td width="50%" align="center">
 
-<img src="../../../photos\Stroke11_croppedpainted.jpg" width="300">
+<img src="../../../media/photos/Stroke44_croppedpainted.jpg" width="300">
 
 **270° - 360°**
 </td>

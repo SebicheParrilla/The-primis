@@ -3,7 +3,7 @@
 We are a team from Puerto Rico that tackled for the first time the challenge of the WRO future engineers category, determined to bring a unique aproach to the competition.
 
 <div align= "center">
-<img src="t-photos\photos\PrimistoPanama.jpeg"width=450>
+<img src="media/team_photos/PrimistoPanama.jpeg"width=450>
 </div>
 
 
@@ -14,12 +14,12 @@ We are a team from Puerto Rico that tackled for the first time the challenge of 
 3. Sebastian J. Parrilla
 4. Carlos A. Espada Rivera
 
-### [t-photos's README](t-photos/README.md)
+### [team history](team_history.md)
 # Anti Insult Zapping Automaton (A.I.Z.A)
 AIZA is our autonomous robot featuring an electropneumatic hybrid drivetrain and vision-based navigation developed for the **WRO Future Engineers 2026** competition.
 
 <div align= "center">
-<img src="v-photos\Past_iterations\AIZA 2.1.jpg
+<img src="media/photos/AIZA 2.1.jpg
 "width=450>
 
 (Placeholder)
@@ -29,7 +29,7 @@ AIZA is our autonomous robot featuring an electropneumatic hybrid drivetrain and
 Unlike a conventional electric drivetrain, AIZA uses a pneumatic engine
 as its primary source of mechanical power. Multiple systems, like the Air Supply and Management System, sensor system and electrical system are used to control and monitor the drivetrain, while a **electronic continuously variable transmission** allows the pneumatic power to be adapted eficiently to the robot's operating demands and conditions.
 
-### [The complete guide to build your very own AIZA here.]()
+### [The complete guide to build your very own AIZA here.](development_process)
 
 
 

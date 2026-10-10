@@ -2,7 +2,7 @@
 
 
 <div align= "center">
-<img src="../../../../hardware/photos/evalve.jpg" width=250>
+<img src="../../../media/photos/evalve.jpg" width=250>
 </div>
 
 ---
