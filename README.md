@@ -46,6 +46,13 @@ AIZA is divided into four main systems that work together as a single autonomous
  
  **Sensing and Control System** - Uses the camera, IMU, and encoders to determine the robot's position, orientation, and drivetrain state.
 
+<div align= "center">
+<img src="media\photos\SystemArchitecture.PNG"
+width=450>
+
+
+</div>
+
 The Raspberry Pi acts as the desition maker, processing the camera and navigation data and commanding the Cytron Motion 2350. The Cytron handles the drivetrain control, including the electric transmission motor, steering servo, pneumatic engine solenoid, and encoder.
 
 # Mechanical
