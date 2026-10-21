@@ -25,10 +25,6 @@ The pneumatic engine is difficult to control directly. The eCVT allows the robot
 <td>eCVT's allow you to have the exact gear ratio you need in order to have the best BSFC. </td>
 </tr>
 
-<tr>
-<td>The Pneumatic engine's speed is hard to control eficiently and without waisting energy. </td>
-<td>Allows you to keep the engine in the most eficient BSFC, and change the robots speed with the electric motor.</td>
-</tr>
 
 <tr>
 <td> Need a clutch to engage and disengage power from the weels in order to change gears. </td>
@@ -52,6 +48,13 @@ The pneumatic engine is difficult to control directly. The eCVT allows the robot
 -   A fixed-ratio drivetrain is mechanically simpler and the eCVT depends more on software to coordinate the pneumatic engine, electric motor, and transmission.
 - More failure points like bearings, gears, friction points and sensors.
 
+### Electric secondary motor
+
+We used a makeblock 7.4V Motor with a built in encoder, this allows us to know precisely at what RPM its spining, which is escential in order to have the correct gear ratio.
+
+<div align= "center">
+<img src="../../media/photos/IMG_1895.jpg" width=350>
+</div>
 
 
 ## Gear System Description

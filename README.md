@@ -1,6 +1,11 @@
+# World Robot Olympiad Future Engineers 2026
+Welcome to our repository, we are a team from Puerto Rico that tackled for the first time the challenge of the WRO future engineers category, determined to bring a unique aproach to the competition.
+
+All terms in the [$thing$](Glossary.md) font are linked to the glossary.
+
+
 # The Primis
 
-We are a team from Puerto Rico that tackled for the first time the challenge of the WRO future engineers category, determined to bring a unique aproach to the competition.
 
 <div align= "center">
 <img src="media/team_photos/PrimistoPanama.jpeg"width=450>
@@ -29,7 +34,8 @@ AIZA is our autonomous robot featuring an electropneumatic hybrid drivetrain and
 Unlike a conventional electric drivetrain, AIZA uses a pneumatic engine
 as its primary source of mechanical power. Multiple systems, like the Air Supply and Management System, sensor system and electrical system are used to control and monitor the drivetrain, while a **electronic continuously variable transmission** allows the pneumatic power to be adapted eficiently to the robot's operating demands and conditions.
 
-### [The complete guide to build your very own AIZA here.](development_process)
+### [The complete step by step guide to build your very own AIZA here.](build_guide)
+
 
 
 
@@ -88,7 +94,23 @@ But we knew that the limitations of a pneumatic drivetrain were not necessarily 
 <td>Instead of reversing the pneumatic engine, we designed the drivetrain so that reverse motion is handled electrically through the eCVT. This allows the pneumatic engine to remain optimized for forward operation while maintaining bidirectional control of the robot.</td>
 </tr>
 
+
+
 </table>
+
+### The eCVT
+
+An eCVT is a electronic continuosly variable transmission, a transmission that pairs two inputs in to a output, and with the proper combining of the inputs, a output with an infinite gear ratio is possible without the need of gear shifting. 
+
+[more on our eCVT here.](mechanical\eCVT\README.md)
+
+We used a makeblock 7.4V Motor with a built in encoder, this allows us to know precisely at what RPM its spining, which is escential in order to have the correct gear ratio.
+
+<div align= "center">
+<img src="media/photos/mokeblockmotor.avif" width=350>
+</div>
+
+More on calculated gear ratios on software.
 
 
 
@@ -102,7 +124,7 @@ But we knew that the limitations of a pneumatic drivetrain were not necessarily 
 
 
 
-# Sensors, Software and Strategy
+# Strategy
 
 #### Before Starting
 Complying with the rules, the robot switches to ON with one switch, and initialices the program with one button, once the robot is powered, it initializes UART communication. The Cytron waits until the RaspberryPi boots and sends a "1" as a "ready" signal, after this the RaspberryPi waits until we initialize the program with one of the on-board buttons of the Cytron, when pressed, the Cytron sends a "1" as a "Start" command, which inicializes the vision program, and resets the yaw angle to 0.
@@ -115,6 +137,27 @@ Depending on the Navigation State Machine value, the RaspberryPi will send the C
 
 #### After Starting
  After the Cytron sends the start command to the RaspberryPi, the robot goes forward, the camera logic traces a line from the bottom center of the image until it reaches a blue or orange line, it will record the first line that it encounters and keeps track of the distance in pixels with how long the line is, when the line length in pixels is less than 50 pixels, it saves  the yaw angle and then turns, when the yaw angle is more than 90 it recenters and then keeps going straight, then we repeat that 11 times to complete the open challenge.
+
+
+# Software and Sensors
+ Our robot has two brains, a Cytron Motion 2350 Pro and a Raspberry Pi 3B+, they both operate different parts of the robot.
+
+Codes used in each board for the WRO 2026 final is linked.
+
+ ## Raspberry Pi 3B+
+
+ [Raspberry pi code]()
+
+ The RaspberryPi is responsable for taking desitions based on what the [IMX708 camera]() sees, it sends via UART direction, Speed, and a "Ready" variable.
+
+ ## Cytron Motion 2350 Pro
+ [Cytron code]()
+
+ The Cytron is reasponsable with giving the RaspberryPi the IMU and distance sensor values, and also sends a "Ready' variable.
+
+ The main task the Cytron has is transmission logic. Based on at what speed the Raspberry pi is commanding it to go, it has to look at the RPM reading from the Pneumatic engine's flywheel using the **Photointrruptor sensor** ([more on it's code here]()) to adjust the electric motor precisely to a target RPM measured by the **electric motor's encoder sensor** ([more on it's code here]()), to achieve the correct gear ratio, 
+
+More on how the software calculates the gear correct ratio [here]().
 
 
 
