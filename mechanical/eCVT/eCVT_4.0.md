@@ -26,4 +26,4 @@ As the first iteration that had a transmission motor we made the gear ratio 4:1 
 
 ## Improvements proyected for the E-CVT 5.0
 
-This was  a great improvement over our past versions but we astrided for a even smaller version in the future.
+This was  a great improvement over our past versions but we strived for a even smaller version in the future.

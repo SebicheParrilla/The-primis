@@ -1,7 +1,7 @@
 # World Robot Olympiad Future Engineers 2026
 Welcome to our repository, we are a team from Puerto Rico that tackled for the first time the challenge of the WRO future engineers category, determined to bring a unique aproach to the competition.
 
-All terms in the [$thing$](Glossary.md) font are linked to the glossary.
+All terms in the italic font are linked to the [***glossary***](Glossary.md).
 
 
 # The Primis
@@ -23,18 +23,53 @@ All terms in the [$thing$](Glossary.md) font are linked to the glossary.
 # Anti Insult Zapping Automaton (A.I.Z.A)
 AIZA is our autonomous robot featuring an electropneumatic hybrid drivetrain and vision-based navigation developed for the **WRO Future Engineers 2026** competition.
 
-<div align= "center">
-<img src="media/photos/AIZA 2.1.jpg
-"width=450>
 
-(Placeholder)
-</div>
+<table>
+  <tr>
+    <td align="center">
+      <b>Front View</b><br>
+      <img src="media/photos/AIZA 2.1.jpg" width="230">
+    </td>
+    <td align="center">
+      <b>Rear View</b><br>
+      <img src="media/photos/AIZA 2.1.jpg" width="230">
+    </td>
+    <td align="center">
+      <b>Left Side</b><br>
+      <img src="media/photos/AIZA 2.1.jpg" width="230">
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <b>Right Side</b><br>
+      <img src="media/photos/AIZA 2.1.jpg" width="230">
+    </td>
+    <td align="center">
+      <b>Top View</b><br>
+      <img src="media/photos/AIZA 2.1.jpg" width="230">
+    </td>
+    <td align="center">
+      <b>Isometric View</b><br>
+      <img src="media/photos/AIZA 2.1.jpg" width="230">
+    </td>
+  </tr>
+</table>
 
+
+[**Click here to see past iterations of the robot**](development_process/vehicle_iterations)
 
 Unlike a conventional electric drivetrain, AIZA uses a pneumatic engine
 as its primary source of mechanical power. Multiple systems, like the Air Supply and Management System, sensor system and electrical system are used to control and monitor the drivetrain, while a **electronic continuously variable transmission** allows the pneumatic power to be adapted eficiently to the robot's operating demands and conditions.
 
 ### [The complete step by step guide to build your very own AIZA here.](build_guide)
+
+## Performance videos
+Open challenge:
+[(Placeholder)]()
+
+Obstacle challenge:
+[(Placeholder)]()
+
 
 
 
@@ -59,10 +94,66 @@ width=450>
 
 </div>
 
-The Raspberry Pi acts as the desition maker, processing the camera and navigation data and commanding the Cytron Motion 2350. The Cytron handles the drivetrain control, including the electric transmission motor, steering servo, pneumatic engine solenoid, and encoder.
 
 # Mechanical
 
+### The Pneumatic Engine
+
+Our robot uses a 4 piston, 2 crankshaft pneumatic engine. It has a flywheel that smoothes out how the engine spins with inertia, we made it with slots in order to count the interruptions per second with the Photointeruptor RPM sensor, which lets us know how hast its going.
+<div align= "center">
+<table>
+  <tr>
+    <td><img src="media/photos/pneng2.1back.jpg" width="340"/></td>
+    <td><img src="media/photos/pneuma2.1.jpg" width="340"/></td>
+  </tr>
+  <tr>
+    <td align="center">Front view</td>
+    <td align="center">Back view</td>
+  </tr>
+</table>
+</div>
+
+### A.S.M.S (Air Supply and Management System)
+ The ASMS is the system in charge of storing air pressure, regulating it to a lower pressure, then supplying it when necesary to the pneumatic engine.
+
+ <div align= "center">
+<img src="media/photos/Flowchart ASMS.PNG" width=600>
+
+</div>
+
+
+
+
+
+</td>
+</tr>
+</table><table>
+<tr>
+<td width="50%" align="center">
+
+<img src="media\photos\Airtanksx6.jpeg" width="300">
+
+</td>
+<td width="60%" valign="top">
+
+We store the compressed air in 6 lightweight tanks at 100psi of pressure, and join them all with silicone tubing and "T" adapters.
+
+[why we used it and more details here.](mechanical\eCVT\README.md)
+</td>
+</tr>
+</table>
+
+### Safety measures in the ASMS
+
+- 1/4 male to 1/8 female brass fitting max pressure of 1200psi
+- NPT ¼ male to NPT1 1/8 male 1200psi
+- NPT 1/8 male schrader valve 200psi
+- Brass T fitting, 2 female 1/8, 1 male 1/8 1200psi
+- Air Regulator max output 145psi
+- e-valve max 115psi
+- NPT 1/8 male 1/16 hose barb 120psi
+- Robart Small air tank 110psi
+- Robart 6ft tubing 1/16 ID 120psi
 
 ### The challenges of a pneumatic engine in a autonomous robot
 A conventional electric drivetrain is simpler, more efficient, easier to control, and generally better suited for an autonomous competition robot than a penumatic engine. Rather than treating the disadvantages of pneumatic power as reasons to avoid it, we treated them as engineering challenges.
@@ -100,26 +191,104 @@ But we knew that the limitations of a pneumatic drivetrain were not necessarily 
 
 ### The eCVT
 
-An eCVT is a electronic continuosly variable transmission, a transmission that pairs two inputs in to a output, and with the proper combining of the inputs, a output with an infinite gear ratio is possible without the need of gear shifting. 
-
-[more on our eCVT here.](mechanical\eCVT\README.md)
-
-We used a makeblock 7.4V Motor with a built in encoder, this allows us to know precisely at what RPM its spining, which is escential in order to have the correct gear ratio.
-
-<div align= "center">
-<img src="media/photos/mokeblockmotor.avif" width=350>
-</div>
-
-More on calculated gear ratios on software.
 
 
+
+
+</td>
+</tr>
+</table><table>
+<tr>
+<td width="50%" align="center">
+
+<img src="media\photos\eCVT5.1.jpeg" width="300">
+
+</td>
+<td width="60%" valign="top">
+
+An [***eCVT***](glossary.md#ecvt) is a electronic continuosly variable transmission, a transmission that pairs two inputs in to a output, and with the proper combining of the inputs, a output with an infinite gear ratio is possible without the need of gear shifting. 
+
+[why we used it and more details here.](mechanical\eCVT\README.md)
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+</td>
+</tr>
+</table><table>
+<tr>
+<td width="50%" align="center">
+
+<img src="media/photos/mokeblockmotor.avif" width="300">
+
+</td>
+<td width="60%" valign="top">
+
+The second input for the eCVT is this, a makeblock 7.4V Motor with a built in encoder, this allows us to know precisely at what RPM its spining, which is escential in order to have the correct gear ratio.
+
+[More on calculated gear ratios on software.]()
+
+</td>
+</tr>
+</table>
 
 # Electrical
-
-
-
 - Diagram and component  verview, current calculations
 - Safety 
+- mosfet driver
+
+Our robot's components need 3 different voltages.
+
+- 7.4V - supplied by two 3.7V batteries in series.
+- 5V - supplied by a buck converter that lowers the voltage from 7.4V to 5V
+- 12V - supplied by the voltage booster  
+
+
+
+<div align= "center">
+<img src="media\photos\Voltageregulators.PNG" width=500>
+</div>
+
+### Max current calculations
+<div align= "center">
+<img src="media/photos/CurrentTable.PNG" width=700>
+</div>
+The robot uses interchangeable 7.4 V battery packs with a nominal capacity of 3.5 Ah. Due to the robot's limited mass and available space, additional onboard battery capacity is not practical within the current design constraints. Instead, packs are swapped and recharged between runs.
+
+### Solenoid Driver
+
+Our ASMS uses a e-valve to opene or close the passage of air pressure to the pneumatic engine. To supply the 800mA and 12V it needs we needed to make a driver board for it.
+
+
+</td>
+</tr>
+</table><table>
+<tr>
+<td width="50%" align="center">
+
+<img src="media/photos/mosfetdriver.jpg" width="300">
+
+</td>
+<td width="60%" valign="top">
+
+The solenoid driver uses a MOSFET in order to control a high current circuit with a small current circuit.
+
+Since we used a MOSFET that wasnt logic level, we also used a gate driver, to fully close the MOSFET when the signal is HIGH
+
+[More details here.](electrical/Cytron_Motion_2350_Pro/Solenoid_driver/README.md)
+
+</td>
+</tr>
+</table>
+
+
+
+
 
 
 
@@ -166,4 +335,3 @@ More on how the software calculates the gear correct ratio [here]().
 
 
 
-# Glossary

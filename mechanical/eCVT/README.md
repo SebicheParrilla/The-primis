@@ -53,7 +53,7 @@ The pneumatic engine is difficult to control directly. The eCVT allows the robot
 We used a makeblock 7.4V Motor with a built in encoder, this allows us to know precisely at what RPM its spining, which is escential in order to have the correct gear ratio.
 
 <div align= "center">
-<img src="../../media/photos/IMG_1895.jpg" width=350>
+<img src="../../media/photos/mokeblockmotor.avif" width=350>
 </div>
 
 
