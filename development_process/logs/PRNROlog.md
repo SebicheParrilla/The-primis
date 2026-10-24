@@ -1,5 +1,5 @@
 # Preparing for the PRNRO
-> Retrospective log from May 1, 2026: This entry's information was digitized from the physical engineering notebook.
+> Retrospective log from May 1, 2026: This entry's information was digitized from the physical engineering notebook. [Click here to see the digitalized version](../../development_process/digitalized_notebook/engineering_notebook_page_042-1.png)
 
 We are aproaching the day of the national olympiad for th Puerto Rico team, and we are optimizing our robot to go to the competition.
 

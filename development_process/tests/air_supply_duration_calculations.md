@@ -1,5 +1,8 @@
 # Air Supply Duration Calculations 2-28-2026
-> Retrospective log from February 28, 2026: This entry's information was digitized from the physical engineering notebook.
+> Retrospective log from February 28, 2026: This entry's information was digitized from the physical engineering notebook. Click here to see:
+[Page 1 ](../../development_process/digitalized_notebook/engineering_notebook_page_017-1.png)
+[Page 2 ](../../development_process/digitalized_notebook/engineering_notebook_page_018-1.png
+)
 ## Problem
 
 The [V1.0  pneumatic engine](../../mechanical/Pneumatics/Penumatic_Engine/1.0.md) could only operate for approximately **7 seconds** using one air tank charged to **40 PSI**.

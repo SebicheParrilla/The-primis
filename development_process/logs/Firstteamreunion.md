@@ -1,5 +1,5 @@
 # First team reunion 
-> Retrospective log from February 20, 2026: This entry's information was digitized from the physical engineering notebook.
+> Retrospective log from February 20, 2026: This entry's information was digitized from the physical engineering notebook. Cick here to see [Page 1](../../development_process/digitalized_notebook/engineering_notebook_page_004-1.png) [Page 2](../../development_process/digitalized_notebook/engineering_notebook_page_005-1.png) [Page 3](../../development_process/digitalized_notebook/engineering_notebook_page_006-1.png).
 ## Theme: brainstorming competition aproach ideas
 How will the car move?
 

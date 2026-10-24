@@ -1,5 +1,5 @@
 ## Photointerruptor Basics
-> Retrospective log from March 13, 2026: This entry's information was digitized from the physical engineering notebook.
+> Retrospective log from March 13, 2026: This entry's information was digitized from the physical engineering notebook. [Click here to se the digitalized version](../../development_process/digitalized_notebook/engineering_notebook_page_026-1.png)
 
 We ordered some photointerruptors, what we will later use as RPM sensors for the Pneumatic Engine's Flywheel. To test them we placed them in a breadboard with a arduino UNO, a 220Ω (ohm) resistor, and a green LED. The interruptor's VCC to the 5V pin on the arduino, ground to ground, and the signal header from the sensor to the pin 7 of the arduino, then, pin 8 of the arduino to the anode of the LED and the cathode to the resistor, then ground.
 

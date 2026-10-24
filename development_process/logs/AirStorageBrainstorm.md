@@ -1,5 +1,5 @@
 # Air storage brainstorming
-> Retrospective log from February 22, 2026: This entry's information was digitized from the physical engineering notebook.
+> Retrospective log from February 22, 2026: This entry's information was digitized from the physical engineering notebook. Click here to see [Page 1](../../development_process/digitalized_notebook/engineering_notebook_page_010-1.png) [Page 2](../../development_process/digitalized_notebook/engineering_notebook_page_011-1.png).
 
 The pneumatic engine needs a steady flow of 25psi of air pressure for it to work properly, abviously the vehicle must be autonomous and have all of the energy its going to consume onboard. 
 

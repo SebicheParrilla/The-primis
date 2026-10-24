@@ -16,7 +16,7 @@
 ---
 
 <div align= "center">
-<img src="../../v-photos/Past_iterations/Bruno&AIZA2.0.1.jpg" width=350>
+<img src="../../media\photos\Bruno&AIZA2.0.1.jpg" width=350>
 
 AIZA pre-V2.0 that had a lego chassis, and my dog Bruno posing with it!
 </div>

@@ -1,6 +1,6 @@
 ## Connection between Raspberry pi and Cytron Motion 2350 with UART
 
-> Retrospective log from May 21, 2026: This entry's information was digitized from the physical engineering notebook.
+> Retrospective log from May 21, 2026: This entry's information was digitized from the physical engineering notebook. [Click here to see the digitalized version.](../../development_process/digitalized_notebook/engineering_notebook_page_044-1.png)
 
 Since we need a reliable and accurate connection between the Raspberry Pi and the Cytron we will test a connection via UART. This will be escencial to calculate the proper speed, and direction the robot will take.
 

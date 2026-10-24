@@ -1,4 +1,5 @@
 # Solenoid Driver Board
+> Part of this document is a digitalized version of one of our engineering notebook's entries. Click here to see them [Page 1](../../../development_process/digitalized_notebook/engineering_notebook_page_034-1.png) [Page 2](../../../development_process/digitalized_notebook/engineering_notebook_page_035-1.png)
 
 Our [ASMS](../../../mechanical/Pneumatics/ASMS/README.md) uses a [electronic valve](e-valve.md) to interrupt the compressed air being fed to the pneumatic engine, This allows us to turn the engine ON/OFF.
 
