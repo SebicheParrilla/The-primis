@@ -14,6 +14,9 @@ Please read the documents thuroghly. Instructions are labled in numeric order, o
 
 # 01 Lego components and flywheel
 
+
+
+
 We'll start with the lego components, that includes the Pneumatic engine, parts of the drivetrain and the two front knucle and wheel asembly.
 
 

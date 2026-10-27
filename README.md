@@ -61,6 +61,7 @@ AIZA is our autonomous robot featuring an electropneumatic hybrid drivetrain and
 Unlike a conventional electric drivetrain, AIZA uses a pneumatic engine
 as its primary source of mechanical power. Multiple systems, like the Air Supply and Management System, sensor system and electrical system are used to control and monitor the drivetrain, while a **electronic continuously variable transmission** allows the pneumatic power to be adapted eficiently to the robot's operating demands and conditions.
 
+*Mention navegation sensors too
 ### [The complete step by step guide to build your very own AIZA here.](build_guide)
 
 ## Performance videos
@@ -113,7 +114,7 @@ Our robot uses a 4 piston, 2 crankshaft pneumatic engine. It has a flywheel that
 </table>
 </div>
 
-From the output of the flwyheel, to the output of the pneumatic engine we used a 1.4:1 gear ratio, [click here to see why we chose this](development_process\tests\engine_output_ratios.md).
+From the output of the flwyheel, to the output of the pneumatic engine we used a 1.4:1 gear ratio, [click here to see why we chose this](development_process/tests/engine_output_ratios.md).
 
 ### A.S.M.S (Air Supply and Management System)
 The ASMS stores compressed air in a tank assembly with a combined internal displacement of 1,422 cm³, charged to 100 psi. A pressure regulator reduces the stored air pressure to a nominal operating pressure of 25 psi before supplying the pneumatic engine. Storing the air at a higher pressure was escential for a longer runtime [click here to see why we chose this](development_process/tests/air_supply_duration_calculations.md).
@@ -175,7 +176,7 @@ We store the compressed air in 6 lightweight tanks at 100psi of pressure, and jo
 
 
 
-Note that the manufacturer's max pressure isn't the burst pressure, they normally have some headroom before a total failure.
+Note that the manufacturer's max pressure isn't the burst pressure, they normally have some headroom before a total failure, so safety the safety margin is actually more.
 
 
 
@@ -286,7 +287,7 @@ The robot uses interchangeable 7.4 V battery packs with a nominal capacity of 3.
 
 ### Solenoid Driver
 
-Our ASMS uses a e-valve to opene or close the passage of air pressure to the pneumatic engine. To supply the 800mA and 12V it needs we needed to make a driver board for it.
+Our ASMS uses a e-valve to open or close the passage of air pressure to the pneumatic engine. To supply the 800mA and 12V it needs we needed to make a driver board for it.
 
 
 </td>
