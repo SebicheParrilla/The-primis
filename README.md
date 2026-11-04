@@ -197,7 +197,9 @@ But we knew that the limitations of a pneumatic drivetrain were not necessarily 
 
 <tr>
 <td>Hard to control the pneumatic engine's speed with a reliable, leak free, compact, and lightweight solution.</td>
-<td>An eCVT allows you to keep the pneumatic engine on a fuel eficient speed while changing the speed of the robot with the secondary electric motor. </td>
+<td>An eCVT allows you to keep the pneumatic engine on a fuel eficient speed while changing the speed of the robot with the secondary electric motor.
+
+[Click here to see how we prooved this with our own custom engine dyno]()</td>
 </tr>
 
 <tr>
