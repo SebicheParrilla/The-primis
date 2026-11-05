@@ -48,22 +48,10 @@ We used a Bicycle brake disc as the flywheel, and its brake disc on a torque arm
 | 25 | 0.0199N·m | 0.00043HP | 400RPM | — |
 | 30 | 0.0245N·m | 0.00063HP | 608RM | — |
 
-The data shows a fairly clear trend: increasing pressure improves the pneumatic engine's performance, but it comes at the cost of operating duration. That's a  trade-off to discuss because we're not simply trying to maximize power, we're balancing performance against available stored energy.
+
 
  
 <table>
-  <tr>
-    <td width="60%" valign="top">
-      <img src="../../media/photos/DynoPower.png" width="100%">
-    </td>
-    <td width="40%" valign="top">
-      <h3>Max Power</h3>
-      <p>
-        X
-      </p>
-    </td>
-  </tr>
-
   <tr>
     <td width="40%" valign="top">
       <img src="../../media/photos/DynoTorque.png" width="100%">
@@ -76,8 +64,7 @@ The data shows a fairly clear trend: increasing pressure improves the pneumatic 
       </p>
     </td>
   </tr>
-
-  <tr>
+    <tr>
     <td width="40%" valign="top">
       <img src="../../media/photos/DynoRPM.png" width="100%">
     </td>
@@ -88,88 +75,52 @@ The data shows a fairly clear trend: increasing pressure improves the pneumatic 
         throughout the testing process.
       </p>
     </td>
+  <tr>
+    <td width="60%" valign="top">
+      <img src="../../media/photos/DynoPower.png" width="100%">
+    </td>
+    <td width="40%" valign="top">
+      <h3>Max Power</h3>
+      <p>
+        With the calculated torque, and the RPM of the engine, we calculated the power.
+      </p>
+    </td>
+  </tr>
+
+
+
+
+  </tr>
+    <tr>
+    <td width="60%" valign="top">
+      <img src="../../media/photos/DynoStamina.png" width="100%">
+    </td>
+    <td width="40%" valign="top">
+      <h3>Operation Duration</h3>
+      <p>
+        This chart represents how the air supply duration is affected by the operating air pressure.
+      </p>
+    </td>
+    
   </tr>
 </table>
 
-## Technical details of the Dyno
-### 1. Calibration Procedure
+### Selecting the optimal operating pressure
 
-The HX711's output is a number that increments with more force, a reference mass of 26 g is used to establish the load-cell conversion factor.
+| Pressure | Advantages | Disadvantages | Trade-off |
+|---|---|---|---|
+| **15 PSI** | Low pressure demand and low air consumption | Low rotational speed; torque and power could not be measured | Greater potential endurance, but limited demonstrated performance |
+| **20 PSI** | Measurable torque and power; moderate operating pressure | Lower maximum output than higher-pressure settings | Sacrifices peak performance in favor of a more longer runtime |
+| **25 PSI** | Higher torque, power, and speed than at 20 PSI | Potentially greater air consumption and reduced runtime | Improved performance at the expense of air endurance |
+| **30 PSI** | Highest measured torque, power, and rotational speed | Higher air consumption and shorter runtime | Maximizes instantaneous performance rather than endurance |
 
-The calibration sequence consists of:
+**Selected operating pressure: 20 PSI**
 
-1. Measuring the unloaded load-cell output.
-2. Placing the 26 g reference mass.
-3. Measuring the loaded output.
-4. Calculating the conversion factor in counts per gram.
-5. Removing the reference mass.
-6. Installing the brake caliper and capturing a new zero offset.
+Although 30 PSI provided the highest measured power output, we selected 20 PSI to prioritize air endurance over maximum instantaneous performance. This provides a compromise between mechanical output and the available compressed-air supply.
+The data shows a fairly clear trend: increasing pressure improves the pneumatic engine's performance, but it comes at the cost of operating duration. That's a  trade-off to discuss because we're not simply trying to maximize power, we're balancing performance against available stored energy.
 
-The calibration factor is calculated as:
-
-$$
-C_g = \frac{|R_{26g}-R_0|}{26}
-$$
-
-Where:
-
-- $C_g$ = Calibration factor (counts/g).
-- $R_{26g}$ = Reading with the reference mass.
-- $R_0$ = Unloaded reading.
-
-## Calculating Torque and Power
-
-### Reaction Force
-
-The load-cell reading is converted into force using the calibration factor:
-
-$$
-F = \frac{|R-R_{tare}|}{C_g}
-\times \frac{9.81}{1000}
-$$
-
-Where:
-
-- $F$ = Reaction force (N).
-- $R$ = Current load-cell reading.
-- $R_{tare}$ = Caliper tare reading.
-- $C_g$ = Calibration factor (counts/g).
-
-### Dynamometer Torque
-
-The reaction force acts through a 100 mm moment arm:
-
-$$
-T_{dyno}=F \times 0.100
-$$
-
-### Engine Torque
-
-The transmission reduces engine speed by a factor of three:
-
-$$
-T_{engine}=\frac{T_{dyno}}{3}
-$$
-
-This calculation assumes ideal transmission efficiency and does not account for mechanical losses.
-
-### Mechanical Power
-
-Engine rotational speed is measured directly by the optical sensor.
-
-$$
-P=T_{engine}\times\frac{2\pi RPM}{60}
-$$
-
-Horsepower is calculated as:
-
-$$
-HP=\frac{P}{745.7}
-$$
-
-Maximum torque and maximum power are recorded independently because they do not necessarily occur at the same rotational speed.
-
-### Testing Methodology
+## How does the dyno work?
+### Steps to test 
 
 Each test follows the same sequence:
 
@@ -187,13 +138,98 @@ Each test follows the same sequence:
 
 No-load runtime is measured separately, with the engine operating without applied braking resistance.
 
+### 1. Calibration Procedure
+---
+
+The HX711's output is a number that we called "counts" that increments with more force, a reference mass of 26 g is used to establish the load-cell conversion factor.
+
+The calibration sequence consists of:
+
+1. Measuring the unloaded load-cell count output.
+2. Placing the 26 g reference mass.
+3. Measuring the loaded counts output.
+4. Calculating the conversion factor in counts per gram.
+5. Removing the reference mass.
+6. Installing the brake caliper and capturing a new zero offset.
+
+The calibration factor is calculated as:
+
+$$
+C_g = \frac{|R_{26g}-R_0|}{26}
+$$
+
+Where:
+
+- $C_g$ = Calibration factor (counts/g).
+- $R_{26g}$ = Reading with the reference mass.
+- $R_0$ = Unloaded reading.
+### 2. Starting the test
+---
+Once calibrated, the program commands the solenoid driver to turn on, once the engine spins, the user must apply the brake slowly until the engine stalls.
+
+Since the caliper wants to go with the flywheel when its engaged, the force of the flywheel is tranlated to the load cell, where it will be outputted as a signal for the microcontroller to use.
+
+### 3. Calculating Torque and Power
+---
+
+### Reaction Force
+The load-cell reading is converted into force using the calibration factor:
+
+$$
+F = \frac{|R-R_{tare}|}{C_g}
+\times \frac{9.81}{1000}
+$$
+
+Where:
+
+- $F$ = Reaction force (N).
+- $R$ = Current load-cell reading.
+- $R_{tare}$ = Caliper tare reading.
+- $C_g$ = Calibration factor (counts/g).
+---
+### Dynamometer Torque
+
+The formula for torque, measured in the dyno.
+
+$$
+T_{dyno}=F \times 0.100
+$$
+---
+### Engine Torque
+
+Since we have a 3:1 gear ratio, the torque gets multiplied by 3, to have the torque actually produced by the engine we need to divide it by 3.
+
+$$
+T_{engine}=\frac{T_{dyno}}{3}
+$$
+
+---
+### Mechanical Power
+
+Engine rotational speed is measured directly by the optical sensor.
+
+$$
+P=T_{engine}\times\frac{2\pi RPM}{60}
+$$
+
+Horsepower is calculated as:
+
+$$
+HP=\frac{P}{745.7}
+$$
+
+Maximum torque and maximum power are recorded independently because they do not necessarily occur at the same rotational speed.
+
+
+---
 ### Measurement Limitations
 
 Since the dynamometer's method of measuring torque is by braking, when the engine has a null amount of torque its dificult to have a good reading, thats why the 15psi row of samples is fuilled with "unmeasureable", it also makes it dificult to calculate transmission eficiency, energy loss due to frictin in gears. 
 
+---
 ### Software 
+
 
 The dynamometer control program:
 
-- [Dynamometer Control Code](../Testing/Dynamometer/Code/dyno_test.py)
-- [Dynamometer CAD](../Testing/Dynamometer/CAD/)
+- [Dynamometer Control Code](../../media/srs/Dyno.py)
