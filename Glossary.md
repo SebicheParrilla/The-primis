@@ -5,14 +5,7 @@ Link back to the main [README](README.md)!
 
 | **eCVT** | Electronic Continuously Variable Transmission. A transmission system that electronically changes the effective drivetrain ratio instead of using fixed gears. |
 
-
-
-
-
-
-
-
-| **Pneumatic Engine** | The compressed-air-powered engine used as the primary mechanical power source of AIZA. |
+| **Pneumatic Engine** | The compressed-air-powered engine used as the primary mechanical power source of AIZA.|
 
 | **Flywheel** | A rotating mass connected to the pneumatic engine that helps stabilize its rotational motion and provides the input to the transmission. |
 
@@ -20,7 +13,6 @@ Link back to the main [README](README.md)!
 
 | **Differential** | A drivetrain mechanism that allows the two drive wheels to rotate at different speeds while transmitting torque to both wheels. |
 
-Link back to the main [README](README.md)!
 
 | **Drivetrain** | The mechanical system responsible for transmitting power to the robot's wheels. |
 
@@ -32,7 +24,7 @@ Link back to the main [README](README.md)!
 
 | **Yaw** | Rotation of the robot around its vertical axis. It is used by AIZA to determine its heading during navigation and turning. |
 
-Link back to the main [README](README.md)!
+
 
 | **HSV** | Hue, Saturation, and Value. A color representation used by the vision system to separate colored course markings from the environment. |
 
@@ -44,7 +36,6 @@ Link back to the main [README](README.md)!
 
 | **Encoder** | A sensor used to measure rotational movement and determine the speed or position of a rotating component. |
 
-Link back to the main [README](README.md)!
 
 | **Solenoid** | An electrically controlled valve used to control the flow of compressed air to the pneumatic engine. |
 
@@ -52,4 +43,3 @@ Link back to the main [README](README.md)!
 
 | **Cytron Motion 2350** <a id="cytron"></a> | The RP2040-based controller responsible for low-level drivetrain and actuator control. |
 
-Link back to the main [README](README.md)!
