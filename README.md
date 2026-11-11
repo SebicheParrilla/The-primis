@@ -1,4 +1,4 @@
-# World Robot Olympiad Future Engineers 2026
+  # World Robot Olympiad Future Engineers 2026
 Welcome to our repository, we are a team from Puerto Rico that tackled for the first time the challenge of the WRO future engineers category, determined to bring a unique aproach to the competition.
 
 All terms in the italic font are linked to the [*glossary*](Glossary.md).
@@ -86,7 +86,7 @@ AIZA is divided into four main systems that work together as a single autonomous
 
  **Air Supply and Management System** - Stores compressed air, [*regulates*](Glossary.md) the pressure, and supplies the pneumatic engine.
 
- **Electrical System** - Provides power to the Raspberry Pi, Cytron Motion 2350, sensors, [*actuators*](Glossary.md), and the electric transmission motor.
+ **Electrical System** - Provides power to the Raspberry Pi, Cytron Motion 2350, sensors and the electric transmission motor.
  
  **Sensing and Control System** - Uses the camera, [*IMU*](Glossary.md), and [*encoders*](Glossary.md) to determine the robot's position, orientation, and drivetrain state.
 
@@ -375,7 +375,7 @@ Our robot's components need 3 different voltages.
 
 The robot uses interchangeable 7.4 V battery packs with a nominal capacity of 3.5 [*Ah*](Glossary.md). Due to the robot's limited mass and available space, additional onboard battery capacity is not practical within the current design constraints. Instead, packs are swapped and recharged between runs.
 
-### Solenoid Driver
+### [*Solenoid*](Glossary.md) Driver
 
 Our ASMS uses a e-valve to open or close the passage of air pressure to the pneumatic engine. To supply the 800mA and 12V it needs we needed to make a driver board for it.
 
@@ -422,7 +422,7 @@ The Mosfet driver Circuit electrical diagram.
 
 AIZA uses two controllers, a **Cytron Motion 2350 Pro** and a **Raspberry Pi 3B+**, each responsible for a different part of the robot's operation. This separation allows the Raspberry Pi to handle computationally intensive vision processing while the Cytron manages real-time drivetrain control, sensor acquisition, and actuators.
 
-The two controllers communicate through a UART connection. The Raspberry Pi processes camera information and determines the robot's navigation commands, while the Cytron handles the drivetrain response using feedback from the IMU, distance sensor, and rotary encoders.
+The two controllers communicate through a [*UART*](Glossary.md) connection. The Raspberry Pi processes camera information and determines the robot's navigation commands, while the Cytron handles the drivetrain response using feedback from the IMU, distance sensor, and rotary encoders.
 
 
 ## System Architecture
@@ -451,7 +451,7 @@ The transmission has two inputs: the pneumatic engine and an electric motor. The
 
 The Cytron uses these measurements to regulate the electric motor toward a target RPM. The target depends on the movement command received from the Raspberry Pi.
 
-By controlling the electric input relative to the pneumatic engine's speed, the controller changes the combined output of the planetary transmission. This allows the robot's wheel speed to be controlled while maintaining a fuel efficient speed on the pneumatic engine.
+By controlling the electric input relative to the pneumatic engine's speed, the controller changes the combined output of the [*planetary transmission*](Glossary.md). This allows the robot's wheel speed to be controlled while maintaining a fuel efficient speed on the pneumatic engine.
 
 
 [Click to see initial test of the eCVT logic.](development_process/tests/eCVT%20logic%20coding.md)
@@ -507,7 +507,7 @@ The main processing stages are:
 1. **Field segmentation:** Convert the image to grayscale and apply a threshold to distinguish the white drivable area from the black surrounding boundaries.
 2. **Contour extraction:** Use OpenCV contour detection to identify the field's outline.
 3. **Boundary processing:** Identify useful black-to-white transitions and approximate the field boundaries using contour processing and line fitting.
-4. **Color detection:** Convert the filtered image to HSV and apply color thresholds to isolate the blue and orange markings.
+4. **Color detection:** Convert the filtered image to [*HSV*](Glossary.md) and apply color thresholds to isolate the blue and orange markings.
 5. **Navigation input:** Use the detected markings and their positions in the image to determine the next navigation action.
 
 The HSV thresholds were established by sampling the colors as they appeared through the actual camera, rather than relying exclusively on the official field color values. This was important because camera readings can vary with lighting conditions.
