@@ -5,4 +5,3 @@ We are considering a T-slot photo interruptor as a RPM sensor, this will allow t
 
 Hall efect sensors, that are another alternative as a RPM sensor, need mateal aand magnetized components to work, so it will be heavyver and take more space
 
-(DIGITALIZE THE TABLE IN ENG NOTEBOOK 1)

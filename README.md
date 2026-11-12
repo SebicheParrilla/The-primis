@@ -242,6 +242,8 @@ The second input for the eCVT is this, a makeblock 7.4V Motor with a built in en
 
 The eCVT's output is then connected to a Lego diferential linked by a 1:1 gear ratio this is escential for accurate turns. This makes AIZA rear wheel drive. 
 
+[See every gear ratio in our robot here](development_process/tests/engine_output_ratios.md)
+
 
 </td>
 </tr>
@@ -502,6 +504,15 @@ The two controllers communicate through a [*UART*](Glossary.md) connection. The 
 
 The Raspberry Pi and Cytron exchange information through a 3.3 V UART connection. This allows the Raspberry Pi to send movement commands while receiving sensor information from the Cytron.
 
+Both boards send 3 variables:
+| Cytron | Raspberry |
+|---|---|
+| START | READY |
+| IMU "YAW" | SPEED |
+| DISTANCE | SERVO |
+
+
+
 
 [See the UART test log here](development_process/tests/UART.md)
 
@@ -509,9 +520,10 @@ The Raspberry Pi and Cytron exchange information through a 3.3 V UART connection
 
 The Cytron is responsible for the drivetrain's low-level control and sensor acquisition. It reads the IMU and distance sensor and communicates their measurements to the Raspberry Pi. It also handles the startup handshake between both controllers.
 
-Its most important task is controlling the eCVT's electric input.
 
 ### eCVT Control Logic
+
+![](media\photos\Cytronecvtlogic.drawio.png)
 
 The transmission has two inputs: the pneumatic engine and an electric motor. The pneumatic engine's rotational speed is measured using a photointerrupter sensor positioned next to the slotted flywheel. The electric motor has an integrated encoder that provides feedback about its rotational speed.
 
@@ -520,15 +532,33 @@ The Cytron uses these measurements to regulate the electric motor toward a targe
 By controlling the electric input relative to the pneumatic engine's speed, the controller changes the combined output of the [*planetary transmission*](Glossary.md). This allows the robot's wheel speed to be controlled while maintaining a fuel efficient speed on the pneumatic engine.
 
 
-[Click to see initial test of the eCVT logic.](development_process/tests/eCVT%20logic%20coding.md)
+[See the proof of concept here.](development_process\tests\eCVTlogiccoding.md)
 
 ### Pneumatic Engine RPM Measurement
 
-The pneumatic engine's speed is measured using a photointerrupter and a slotted disk attached to the flywheel.
+In order for the eCVT logic to work we need a reliable way of knowing both input's speeds, we measured the pneumatic engine's speed using a photointerrupter and a slotted disk attached to the flywheel.
 
 Every time a slot passes through the sensor, the optical path is interrupted, producing a pulse. The Cytron measures the time between consecutive pulses and uses the known number of slots per revolution to calculate RPM.
 
 [Flywheel RPM sensor development](development_process/tests/Flywheelencoder.md)
+
+### Math in the eCVT logic
+
+In order to have a controlable eCVT transmission you need to know evry gear ratio on the transmission, for acurate calculations.
+
+- Crankshaft → Engine output: **1:1**
+- Flywheel → Transmission input: **1:4**
+- V5.0 Transmission: **1:8.4**
+- Differential: **1.4:1**
+
+The transmission and differential therefore provided a total 
+reduction of:
+
+
+8.4 x 1.4 x 1.4 = 16.464
+
+[See all about gear ratios here](development_process/tests/engine_output_ratios.md)
+
 
 ## Raspberry Pi 3B+
 
@@ -542,15 +572,82 @@ The IMX708 camera captures images at 2304 × 1296 pixels, while the preview is d
 
 The main processing stages are:
 
-1. **Field segmentation:** Convert the image to grayscale and apply a threshold to distinguish the white drivable area from the black surrounding boundaries.
-2. **Contour extraction:** Use OpenCV contour detection to identify the field's outline.
-3. **Boundary processing:** Identify useful black-to-white transitions and approximate the field boundaries using contour processing and line fitting.
-4. **Color detection:** Convert the filtered image to [*HSV*](Glossary.md) and apply color thresholds to isolate the blue and orange markings.
-5. **Navigation input:** Use the detected markings and their positions in the image to determine the next navigation action.
+- Field segmentation: Convert the image to grayscale and apply a threshold to distinguish the white drivable area from the black surrounding boundaries.
+- Contour extraction: Use OpenCV **contour** detection to identify the field's outline.
+- Boundary processing: Identify useful black-to-white transitions and approximate the field boundaries using contour processing and OpenCV **line fitting**.
+- Color detection:Convert the filtered image to [*HSV*](Glossary.md) and apply color thresholds to isolate the blue and orange lines.
+- Navigation input:Use the detected markings and their positions in the image to determine the next navigation action.
 
-The HSV thresholds were established by sampling the colors as they appeared through the actual camera, rather than relying exclusively on the official field color values. This was important because camera readings can vary with lighting conditions.
+[Click here to see more details](development_process/tests/matthreshholddetecting.md)
 
-[Click here to see how the camera processes the field geometry](development_process/tests/matthreshholddetecting.md)
+The HSV thresholds were **Calibrated** by sampling the colors as they appeared through the actual camera, rather than relying exclusively on the official field color values. This was important because camera readings can vary with lighting conditions. 
+
+[Click here to see the code we used](media/srs/checkcolorindisplay.py)
+
+
+## Obstacle strategy 
+
+
+
+### Startup and Handshake
+
+1. `[PI: BOOTING | CYTRON: BOOTING]`
+   - To start a match, we place the robot on the field and power it on using the main cutoff switch, while keeping the Cytron's onboard power switch permanently on. This allows us to use a single main power switch and the start button as the two operator controls.
+
+2. `[PI: BOOTING | CYTRON: IDLE]`
+   - The Cytron boots almost immediately and begins transmitting a `"READY"` variable to the Raspberry Pi.
+   - While waiting for the Pi, the Cytron keeps its onboard LEDs red to indicate that the system is not yet fully ready.
+
+3. `[PI: HANDSHAKE | CYTRON: READY]`
+   - Once the Raspberry Pi finishes booting and receives the Cytron's `"READY"` message, it sends its own `"READY"` message back.
+   - After receiving this response, the Cytron changes its onboard LEDs to green, indicating that both controllers have established communication and are ready to start.
+
+4. `[PI: WAITING FOR START | CYTRON: WAITING FOR BUTTON]`
+   - Both controllers remain in their waiting states until the user presses the start button connected to GP20 on the Cytron.
+   - The Cytron then transmits a `"START"` message to the Raspberry Pi.
+   - All motion commands remain at zero before the start signal is received. This prevents the robot from moving or performing sensor calibration before the match begins.
+
+### Program Start
+
+1. `[PI: PROGRAM START | CYTRON: OBEYING]`
+   - After receiving `"START"`, the Cytron changes its onboard LEDs to yellow, indicating that the program is running.
+   - The Raspberry Pi begins transmitting three control variables: `"SPEED"`, `"SERVO"` and `"READY"`.
+   - The Cytron follows the received `"SERVO"` command directly, while `"SPEED"` becomes the target value used by the eCVT control logic to regulate the drivetrain.
+   - At startup, the Cytron reads the BNO085 yaw value and stores it as the reference heading. Subsequent yaw measurements are compared against this reference, allowing the robot to measure its relative rotation from the starting orientation.
+
+### Challenge Identification — OBSTACLE_MASK
+
+1. `[PI: CHALLENGE DETECTION | CYTRON: OBEYING]`
+   - The Raspberry Pi processes the camera image and applies the `OBSTACLE_MASK` to isolate regions that may correspond to obstacles.
+   - OpenCV contour detection is used to identify connected regions, or blobs, within the mask.
+   - Small contours are filtered out using a minimum area threshold to reduce false detections caused by image noise, reflections or small visual artifacts.
+   - The remaining blobs are evaluated using their area, position and bounding-box dimensions to determine whether a valid obstacle-like object is present.
+   - If no valid blobs are detected, the robot identifies the field as an Open Challenge environment and proceeds to line detection.
+   - If valid blobs are detected, the robot identifies the presence of obstacles and proceeds to the corresponding obstacle-navigation logic.
+
+### What Color Is FIRSTLINE?
+
+1. `[PI: FIRSTLINE DETECTION | CYTRON: OBEYING]`
+   - The Raspberry Pi identifies the first colored line detected by the camera and stores its color in the `FIRSTLINE` variable.
+   - The distance between the detected line and the robot is measured in pixels.
+
+   **If `FIRSTLINE = BLUE`:**
+   - Servo commands are positive.
+   - The reference yaw direction is positive.
+   - The robot follows a counter-clockwise route.
+
+   **If `FIRSTLINE = ORANGE`:**
+   - Servo commands are negative.
+   - The reference yaw direction is negative.
+   - The robot follows a clockwise route.
+
+   - Once the line reaches a predefined pixel-distance threshold, the Raspberry Pi stores the current yaw reference and sends the appropriate steering command according to the detected line color.
+   - The robot continues forward until the relative yaw reaches the target angle.
+   - Once the turn is completed, the Raspberry Pi commands the steering servo to return to its straight position and increments the `LAP` counter.
+   - This process repeats until `LAP = 12`.
+
+## Visual representation of the code
+
 
 <div align= "center">
 <img src="media/photos/ProgramFlowchart.drawio.png" width=500>
@@ -558,7 +655,12 @@ The HSV thresholds were established by sampling the colors as they appeared thro
 
 
 
+
+
+
 # Systems Thinking and Engineering Decisions
+
+
 
 ### The challenges of a pneumatic engine in a autonomous robot
 A conventional electric drivetrain is simpler, more efficient, easier to control, and generally better suited for an autonomous competition robot than a penumatic engine. Rather than treating the disadvantages of pneumatic power as reasons to avoid it, we treated them as engineering challenges.
