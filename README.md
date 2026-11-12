@@ -58,17 +58,24 @@ AIZA is our autonomous robot featuring an [*electropneumatic*](Glossary.md) hybr
   </tr>
 </table>
 
-
-
-## Performance videos
-Open challenge:
-[(Placeholder)]()
-
-Obstacle challenge:
-[(Placeholder)]()
-
-
 ### [Click here to see past iterations of the robot](development_process/vehicle_iterations)
+
+### [ALL CAD files](media\CAD\STL)
+
+### Performance videos
+
+[Open challenge](https://youtu.be/QNBB8k_d7_M)
+
+*Obstacle challenge
+[(Placeholder)]()
+
+### WRO code
+
+[**Cytron**](code\Cytron_2350\mainopen.py)
+
+[**RaspberryPI**](code\RaspberryPi\Run1(6).py)
+
+
 
 
 
@@ -739,20 +746,29 @@ Due to the limited mass and available space within the chassis, increasing onboa
 
 
 
-
 # Reproducibility
 
-### [The COMPLETE step by step guide to build your very own AIZA here.](build_guide/Step01/Step01.md)
+AIZA's development has been documented from its earliest stages. We believe that an engineering project should be more than a finished product: its construction, iterations, experiments, and decisions should also be accessible and reproducible.
 
-### [ALL CAD files](media\CAD)
+The following resources provide different perspectives on the project:
+
+### 1. Build Guide
+
+**[The COMPLETE step-by-step guide to building your own AIZA](build_guide/Step01/Step01.md)**
+
+A practical guide covering the robot's construction, from individual components and assemblies to the integration of its complete systems.
+
+### 2. Development Process
+
+**[Explore AIZA's development history](development_process/)**
+
+A chronological record of the robot's evolution, including prototypes, mechanical revisions, experiments, challenges, and the changes that led to the final design.
+
+### 3. Complete Digital Engineering Notebook
+
+**[Explore the engineering notebook]()**
+
+A collection of technical documentation, calculations, testing logs, measurements, and observations recorded throughout the development process.
 
 
-development process
 
-digital notebook
-
-AIZA's code
-
-Cytron:
-
-RaspberryPi:
