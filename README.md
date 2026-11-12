@@ -1,4 +1,4 @@
-  # World Robot Olympiad Future Engineers 2026
+# World Robot Olympiad Future Engineers 2026
 Welcome to our repository, we are a team from Puerto Rico that tackled for the first time the challenge of the WRO future engineers category, determined to bring a unique aproach to the competition.
 
 All terms in the italic font are linked to the [*glossary*](Glossary.md).
@@ -20,7 +20,10 @@ All terms in the italic font are linked to the [*glossary*](Glossary.md).
 4. Carlos A. Espada Rivera
 
 ### [team history](team_history.md)
-# Anti Insult Zapping Automaton (A.I.Z.A)
+
+#  Mobility and Mechanical Design
+
+### Anti Insult Zapping Automaton (A.I.Z.A)
 AIZA is our autonomous robot featuring an [*electropneumatic*](Glossary.md) hybrid [*drivetrain*](Glossary.md) and [*vision-based navigation*](Glossary.md) developed for the **WRO Future Engineers 2026** competition.
 
 
@@ -56,15 +59,6 @@ AIZA is our autonomous robot featuring an [*electropneumatic*](Glossary.md) hybr
 </table>
 
 
-### [Click here to see past iterations of the robot](development_process/vehicle_iterations)
-
-[**ALL CAD files**](media\CAD)
-
-
-Unlike a conventional electric drivetrain, AIZA uses a [*pneumatic engine*](Glossary.md) as its primary source of [*mechanical power*](Glossary.md). Multiple systems, like the [*Air Supply and Management System*](Glossary.md) (ASMS), sensor system and electrical system are used to control and monitor the drivetrain, while a [*electronic continuously variable transmission*](Glossary.md) (eCVT), allows the pneumatic engine's power to be adapted eficiently to the robot's operating demands and conditions.
-
-*Mention navegation sensors too
-### [The complete step by step guide to build your very own AIZA here.](build_guide/Step01/Step01.md)
 
 ## Performance videos
 Open challenge:
@@ -74,55 +68,45 @@ Obstacle challenge:
 [(Placeholder)]()
 
 
+### [Click here to see past iterations of the robot](development_process/vehicle_iterations)
 
 
 
 
-# Systems Architecture
 
-AIZA is divided into four main systems that work together as a single autonomous platform:
-
- **Mechanical System** - Converts pneumatic and electrical power into controlled and measured wheel motion through the drivetrain.
-
- **Air Supply and Management System** - Stores compressed air, [*regulates*](Glossary.md) the pressure, and supplies the pneumatic engine.
-
- **Electrical System** - Provides power to the Raspberry Pi, Cytron Motion 2350, sensors and the electric transmission motor.
- 
- **Sensing and Control System** - Uses the camera, [*IMU*](Glossary.md), and [*encoders*](Glossary.md) to determine the robot's position, orientation, and drivetrain state.
-
-<div align= "center">
-<img src="media/photos/SystemArchitecture.PNG"
-width=450>
+Unlike a conventional electric drivetrain, AIZA uses a [*pneumatic engine*](Glossary.md) as its primary source of [*mechanical power*](Glossary.md). Multiple systems, like the [*Air Supply and Management System*](Glossary.md) (ASMS), sensor system and electrical system are used to control and monitor the drivetrain, while a [*electronic continuously variable transmission*](Glossary.md) (eCVT), allows the pneumatic engine's power to be adapted eficiently to the robot's operating demands and conditions.
 
 
-</div>
 
 
-# Mechanical
 
-
-### Chassis 
-
-The chassis is the fourth iteration, it serves as the structural foundation of AIZA, supporting the drivetrain, steering mechanism, pneumatic system, electronics, and sensors.
-
-<div align= "center">
-<img src="media/photos/Chassis.jpeg" width=500>
-
-[more on it here](mechanical/Chassis.md)
-</div>
-
-### Steering
-
-Our steering system needed to be robust since we knew from the start the robot was going to be heavy and big, it had to be made separate from the cassis since our printer didn't have enough space to print the full chassis.
-
-<div align= "center">
-<img src="media\photos\Steering.jpeg
-" width=500>
+<table>
+  <tr>
+    <td width="60%" valign="top">
+      <img src="media/photos/Chassis.jpeg" width="100%">
+    </td>
+    <td width="60%" valign="top">
+      <h3>Chassis</h3>
+      <p>
+        AIZA's Chassis is the fourth iteration, components are printed in PETG since we needed a sturdy, reliable chassis for heavy and big systems. 
 
 [more on it here](mechanical/Steering.md)
-</div>
+      </p>
+    </td>
+  </tr>
+    <tr>
+    <td width="60%" valign="top">
+      <img src="media/photos/Steering.jpeg" width="100%">
+    </td>
+    <td width=60%" valign="top">
+      <h3>Steering</h3>
+      <p>
+        Our steering system needed to be robust since we knew from the start the robot was going to be heavy and big, it had to be made separate from the chassis since our printer didn't have enough space to print the full chassis.
 
-
+[more on it here](mechanical/Steering.md)
+      </p>
+    </td>
+</table>
 
 ### The Pneumatic Engine
 
@@ -160,6 +144,7 @@ The ASMS stores compressed air in a tank assembly with a combined internal [*dis
  <div align= "center">
 <img src="media/photos/Flowchart ASMS.PNG" width=600>
 
+ASMS FLOWCHART
 </div>
 
 
@@ -189,64 +174,9 @@ We store the compressed air in 6 lightweight tanks at 100psi of pressure, and jo
 
 
 
-### Pneumatic System Pressure Ratings and Safety Margins
-
-| Component | Maximum Rated Pressure (PSI) | Operating Pressure (PSI) | Safety Margin (PSI) |
-|:--|--:|--:|--:|
-| Pneumatic Air Tanks | 110 | 100 | 10 |
-| Pressure Regulator | 145 | 25 | 120 |
-| Pneumatic Engine (Low Pressure Hoses) | 40 | 25 | 15 |
-| E-Valve  | 115 | 25 | 90 |
-| NPT M¼ to NPT F⅛  brass fitting | 1200 | 100 | 1100 |
-| NPT M¼ to NPT M⅛ | 1200 | 100 | 1100 |
-| Brass T fitting, 2x F⅛, 1x M⅛| 1200 | 100 | 1100 |
-| NPT M⅛ to ¹⁄₁₆ hose barb| 120 | 100 | 20 |
-| NPT M⅛ schrader valve| 200 | 100 | 100 |
-| High pressure hoses and conectors| 120 | 100 | 20 |
 
 
-
-Note that the manufacturer's max pressure isn't the [*burst pressure*](Glossary.md), they normally have some headroom before a total failure, so safety the safety margin is actually more.
-
-
-
-## The challenges of a pneumatic engine in a autonomous robot
-A conventional electric drivetrain is simpler, more efficient, easier to control, and generally better suited for an autonomous competition robot than a penumatic engine. Rather than treating the disadvantages of pneumatic power as reasons to avoid it, we treated them as engineering challenges.
-
-
-But we knew that the limitations of a pneumatic drivetrain were not necessarily limitations of the pneumatic engine alone, but of how the entire drivetrain was designed around it.
-
-
-<table>
-<tr>
-<th width="50%">Disadvantage</th>
-<th width="50%">Our Approach</th>
-</tr>
-
-<tr>
-<td>Hard to control the pneumatic engine's speed with a reliable, leak free, compact, and lightweight solution.</td>
-<td>An eCVT allows you to keep the pneumatic engine on a fuel eficient speed while changing the speed of the robot with the secondary electric motor.
-
-[**Click here to see how we proved this with our own custom engine dyno**](development_process/tests/DYNAMOMETER.md)</td>
-</tr>
-
-<tr>
-<td>A system capable of continuously supplying compressed air to the pneumatic engine would be expensive, heavy, and consume valuable space on the robot.</td>
-<td>Rather than supplying compressed air continuously, we designed the robot around stored compressed air using lightweight, high pressure tanks and a way to regulate the air, allowing the pneumatic engine to operate independently of an onboard compressor.</td>
-</tr>
-
-
-
-<tr>
-<td> Pneumatic engine can only spin a certain direction, depending of how timing is set up.  </td>
-<td>Instead of reversing the pneumatic engine, we designed the drivetrain so that reverse motion is handled electrically through the eCVT. This allows the pneumatic engine to remain optimized for forward operation while maintaining bidirectional control of the robot.</td>
-</tr>
-
-
-
-</table>
-
-### The eCVT 5.1
+### AIZA's Transmission, the eCVT 5.1
 
 
 
@@ -265,7 +195,7 @@ But we knew that the limitations of a pneumatic drivetrain were not necessarily 
 
 An **eCVT** is a electronic continuosly variable transmission, a transmission that pairs two inputs in to a output, and with the proper combining of the inputs, a output with an infinite [*gear ratio*](Glossary.md) is possible without the need of gear shifting. 
 
-[Click here to see why we used it](mechanical/eCVT/README.md)
+[Click here to see why we used it and trade-offs.](mechanical/eCVT/README.md)
 
 [See the past iterations of the eCVT!](mechanical\eCVT)
 </td>
@@ -296,7 +226,28 @@ The second input for the eCVT is this, a makeblock 7.4V Motor with a built in en
 </tr>
 </table>
 
-# Dynamometer
+### Transmission Ouput
+
+
+</td>
+</tr>
+</table><table>
+<tr>
+<td width="60%" align="center">
+
+<img src="media/photos/Transoutput.jpeg" width="350">
+
+</td>
+<td width="40%" valign="top">
+
+The eCVT's output is then connected to a Lego diferential linked by a 1:1 gear ratio this is escential for accurate turns. This makes AIZA rear wheel drive. 
+
+
+</td>
+</tr>
+</table>
+
+# Our custom Dynamometer: Torque and Power Specs
 
 Since one of the best features of our custom eCVT is the ability to keep the pneumatic engine on a fuel eficient speed while changing the speed of the robot with the secondary electric motor, we needed to know which was the most eficient speed of the pneumatic engine.
 
@@ -377,13 +328,89 @@ The data shows a fairly clear trend: increasing pressure improves the pneumatic 
 | Maximum Speed | 304 RPM |
 | No-Load Runtime | 50 s |
 
+[More details on the dynamometer here](development_process/tests/DYNAMOMETER.md)
+
+
+
+
+
 # Power and Sensor Architecture
 
-AIZA's power and sensing architecture was designed around the electrical requirements of its electropneumatic drivetrain and autonomous navigation system. The electrical system supplies three voltage levels to the robot's components, while the sensing system provides feedback for drivetrain control, orientation measurement, distance detection, and computer vision.
 
-This section documents the power distribution, electrical design decisions, sensor selection, calibration, and reliability considerations.
+AIZA is divided into four main systems that work together as a single autonomous platform:
 
-## 1. Power Distribution and Electrical Architecture
+ **Mechanical System** - Converts pneumatic and electrical power into controlled and measured wheel motion through the drivetrain.
+
+ **Air Supply and Management System** - Stores compressed air, [*regulates*](Glossary.md) the pressure, and supplies the pneumatic engine.
+
+ **Electrical System** - Provides power to the Raspberry Pi, Cytron Motion 2350, sensors and the electric transmission motor.
+ 
+ **Sensing and Control System** - Uses the camera, [*IMU*](Glossary.md), and [*encoders*](Glossary.md) to determine the robot's position, orientation, and drivetrain state.
+
+<div align= "center">
+<img src="media/photos/SystemArchitecture.PNG"
+width=450>
+</div>
+
+## AIZA's sensors
+
+| Sensor | Why We Chose It | Calibration andting Method |
+|---|---|---|
+| **IMX708 Camera** | Its 120° field of view provides a wider view of the competition field than the OV5647's 56° field of view. [See here why we chose the IMX](development_process/logs/OVvsIMX.md) | HSV thresholds were established by sampling colors through the actual camera under the available lighting conditions instead of relying exclusively on official field color values. This accounts for differences in lighting and camera color response. [See here for more info](development_process/tests/matthreshholddetecting.md)|
+| **BNO085 IMU** | Provides orientation and yaw measurements used for turning and heading correction. Its onboard sensor fusion provides orientation data without requiring us to combine multiple separate sensors. | We compare an initial value and substract it by that amount, that gives us a value starting from 0 for the rest of the laps, since the sensor used multiple reading in to one, we havent had problems with drift. [See here the Cytron's code to see how we calibrated the samples.](code/Cytron_2350/mainopen.py) |
+| **Ultrasonic Distance Sensor** | Provides distance measurements for detecting nearby obstacles. It offers a straightforward way to measure distance without relying on camera-based detection. | Using the library of the sensor, we checked to see if readings were accurate with a ruler. |
+| **Flywheel Photointerrupter** | Measures the pneumatic engine's flywheel RPM using an optical sensor and a slotted encoder disk. We chose it over a Hall-effect sensor because it is lighter, cheaper, and does not require a metal target or magnet. [See why we chose the photointerruptor](development_process\logs\Hallvsoptic.md) | The flywheel disk uses 16 slots per revolution. RPM is calculated from the time between pulses. To reduce measurement fluctuations, the program stores seven time intervals in a rolling sample queue and averages them before calculating RPM. [Flywheel RPM sensor development](development_process/tests/Flywheelencoder.md) |
+| **eCVT Motor Encoder** |Since we needed to know the electric motor's sped as well, it was better to have a electric motor with an intgrated one rather than a separate flywheel for a second photointerruptor.| We made a rig to calibrate both encoders, we set both in the same axle and found that both were the same reading and consistant, [see the test here.](development_process/tests/eCVTlogiccoding.md) |
+
+
+## Sensor Placements
+
+### Camera Placement and Field Geometry
+
+The IMX708 camera is mounted 150mm above the ground, with a 15° downward inclination from the horizontal plane.
+
+The WRO competition field is 3,000 mm long. With the camera mounted at this height and angle, its central viewing axis intersects the ground approximately 568 mm ahead of the robot. This corresponds to roughly 19% of the field's total length, providing visibility of the ground ahead while maintaining a forward-looking perspective.
+
+The camera's 120° diagonal field of view further expands the visible area, allowing the vision system to observe field markings and boundaries across a wider portion of the surroundings. This is important because the robot must perceive its position relative to the field geometry while moving and approaching turns.
+
+
+
+| Parameter | Value |
+|---|---:|
+| Camera | IMX708 |
+| Mounting height | 150mm |
+| Downward inclination | 15° |
+| Diagonal field of view | 120° |
+| Field length | 3,000 mm |
+| Centerline ground intersection | 568.3 mm |
+| Percentage of field length | 18.9% |
+
+### Photointerrupter Placement
+
+
+
+
+</td>
+</tr>
+</table><table>
+<tr>
+<td width="50%" align="center">
+
+<img src="media/photos/rpmsns.jpeg" width="380">
+
+</td>
+<td width="50%" valign="top">
+
+The photointerrupter is positioned adjacent to the pneumatic engine's flywheel, aligned with the rotating encoder disc so that its teeth periodically interrupt the sensor's infrared beam.
+
+The sensor must maintain sufficient clearance from the disc to prevent physical contact during rotation. Initially, we used an encoder disc with rectangular teeth, but flywheel wobbling occasionally caused the teeth to catch against the photointerrupter. We redesigned the disc with sharper, tapered teeth to improve clearance and reduce the risk of mechanical interference.
+
+This placement allows the controller to reliably detect the 16 slots per revolution and calculate the flywheel's RPM. 
+
+
+</td>
+</tr>
+</table>
 
 ### Voltage Regulation
 
@@ -399,56 +426,6 @@ The voltage regulators are shown below.
 
 ![Voltage regulators](media/photos/Voltageregulators.PNG)
 
-The use of separate voltage rails allows components with different operating requirements to share the same battery system.
-
-### Battery Configuration and Capacity Constraints
-
-The robot uses interchangeable 7.4 V battery packs with a nominal capacity of 3.5 Ah.
-
-Due to the limited mass and available space within the chassis, increasing onboard battery capacity was not practical within the current design constraints. Instead, battery packs are swapped and recharged between competition runs.
-
-Battery capacity alone does not determine whether a pack can safely supply the robot's peak current. Its discharge rating and voltage behavior under load must also be considered when evaluating the power system.
-
-### Power Budget and Current Distribution
-
-A component-by-component current budget was used to estimate the electrical demand of the robot.
-
-![Maximum current calculations](media/photos/CurrentTable.PNG)
-
-The current budget should account for both normal operating current and peak demand, particularly during motor acceleration and simultaneous actuator operation.
-
-The relevant quantities are:
-
-- Component operating voltage.
-- Typical operating current.
-- Maximum or stall current, where applicable.
-- Total current demand on each voltage rail.
-- Converter output-current ratings.
-- Battery discharge capability.
-
-The total demand must be evaluated separately for each voltage rail. A converter must be capable of supplying the combined load connected to its output, including transient demand.
-
-The current calculations are used to evaluate whether the battery and voltage converters can support the robot's electrical loads without excessive voltage drop or interruption of controller operation.
-
-## 2. Actuator Electronics and Solenoid Driver
-
-### Solenoid Valve Driver
-
-The Air Supply and Management System (ASMS) uses an electrically actuated valve to control the delivery of compressed air to the pneumatic engine.
-
-The solenoid requires 12 V and approximately 800 mA. Since the Cytron's control signal cannot directly supply this load, we designed a dedicated driver circuit to switch the higher-current solenoid circuit.
-
-![MOSFET solenoid driver](media/photos/mosfetdriver.jpg)
-
-The driver uses a MOSFET to control the solenoid through a low-current control signal. Because the selected MOSFET is not a logic-level device, a gate driver is used to provide the required gate voltage.
-
-The circuit also includes two LEDs to indicate its operating state and a diode for electrical protection.
-
-![MOSFET driver circuit](media/photos/MosfetCircuit.PNG)
-
-**Further documentation:** [Solenoid driver design and circuit details](electrical/Cytron_Motion_2350_Pro/Solenoid_driver/README.md)
-
-
 <div align= "center">
 <img src="media/photos/electriccomponentdiagram.png" width="600">
 </div>
@@ -458,12 +435,24 @@ The circuit also includes two LEDs to indicate its operating state and a diode f
 <img src="media/photos/CurrentTable.PNG" width=700>
 </div>
 
-The robot uses interchangeable 7.4 V battery packs with a nominal capacity of 3.5 [*Ah*](Glossary.md). Due to the robot's limited mass and available space, additional onboard battery capacity is not practical within the current design constraints. Instead, packs are swapped and recharged between runs.
+### Max Power Calculations
+| Component | Operating Voltage (V) | Maximum Current (A) | Maximum Power (W) |
+|---|---:|---:|---:|
+| E-Valve | 12 | 0.700 | 8.400 |
+| Solenoid Driver | 5 | 0.030 | 0.150 |
+| eCVT Motor | 7.4 | 0.800 | 5.920 |
+| Raspberry Pi 3B+ | 5 | 2.400 | 12.000 |
+| Cytron Motion 2350 | 7.4 | 0.150 | 1.110 |
+| Servo | 5 | 1.650 | 8.250 |
+| Flywheel RPM Sensor | 5 | 0.009 | 0.045 |
+| Distance Sensor | 5 | 0.020 | 0.100 |
+| Voltage Booster | 7.4 | 0.030 | 0.222 |
+| Buck Converter | 7.4 | 0.030 | 0.222 |
+| **Total** | — | — | **36.419 W** |
 
-### [*Solenoid*](Glossary.md) Driver
+### Solenoid Driver
 
 Our ASMS uses a e-valve to open or close the passage of air pressure to the pneumatic engine. To supply the 800mA and 12V it needs we needed to make a driver board for it.
-
 
 </td>
 </tr>
@@ -498,19 +487,11 @@ The Mosfet driver Circuit electrical diagram.
 
 
 
-
-
-
-
-
-# Software and Sensors
+# Software Architecture and Obstacle Challenge Strategy
 
 AIZA uses two controllers, a **Cytron Motion 2350 Pro** and a **Raspberry Pi 3B+**, each responsible for a different part of the robot's operation. This separation allows the Raspberry Pi to handle computationally intensive vision processing while the Cytron manages real-time drivetrain control, sensor acquisition, and actuators.
 
 The two controllers communicate through a [*UART*](Glossary.md) connection. The Raspberry Pi processes camera information and determines the robot's navigation commands, while the Cytron handles the drivetrain response using feedback from the IMU, distance sensor, and rotary encoders.
-
-
-## System Architecture
 
 | Controller | Main responsibilities |
 |---|---|
@@ -549,14 +530,6 @@ Every time a slot passes through the sensor, the optical path is interrupted, pr
 
 [Flywheel RPM sensor development](development_process/tests/Flywheelencoder.md)
 
-### Why an optical sensor instead of a Hall-effect sensor?
-
-A Hall-effect sensor detects changes in a magnetic field, usually by sensing a magnet attached to the rotating component. An optical photointerrupter instead detects interruptions in a light path.
-
-[See why we chose the photointerruptor](development_process\logs\Hallvsoptic.md)
-
-
-
 ## Raspberry Pi 3B+
 
 The Raspberry Pi is responsible for vision processing and high-level navigation decisions. It receives images from the IMX708 camera, processes the field markings, and determines the direction and speed commands required to navigate the competition field.
@@ -565,33 +538,7 @@ The Raspberry Pi sends the Cytron the movement commands through UART, including 
 
 ### Camera and Image Processing
 
-
-
-The IMX708 camera captures images at 2304 × 1296 pixels, while the preview is displayed at 640 × 360 pixels to reduce the processing required for visualization.
-
-<div align= "center">
-<table>
-  <tr>
-    <td><img src="media/photos/Highfov.PNG" width="340"/></td>
-    <td><img src="media\photos\LowFov.PNG" width="340"/></td>
-  </tr>
-  <tr>
-    <td align="center"> IMX708  120° </td>
-    <td align="center"> OV5647  56° </td>
-  </tr>
-</table>
-</div>
-
-| Camera | Field of view |
-|---|---:|
-| OV5647 | 56° |
-| IMX708 | 120° |
-
-The IMX708 captures images at 2304 × 1296 pixels. A 640 × 360 preview is used to reduce the processing required for visualization.
-
-**Documentation:** [IMX708 specifications](electrical/Raspberry_π_3B+/Camera/IMX708.md)
-
-The image-processing pipeline was developed to identify the boundaries of the drivable field and the colored lines used for navigation.
+The IMX708 camera captures images at 2304 × 1296 pixels, while the preview is displayed at 640 × 360 pixels to reduce the processing required for visualization.The image-processing pipeline was developed to identify the boundaries of the drivable field and the colored lines used for navigation.
 
 The main processing stages are:
 
@@ -605,105 +552,105 @@ The HSV thresholds were established by sampling the colors as they appeared thro
 
 [Click here to see how the camera processes the field geometry](development_process/tests/matthreshholddetecting.md)
 
+<div align= "center">
+<img src="media/photos/ProgramFlowchart.drawio.png" width=500>
+</div>
 
 
-# Strategy
 
-## Before Starting
+# Systems Thinking and Engineering Decisions
 
-The robot uses a main power switch and a separate onboard button to initiate its autonomous program.
+### The challenges of a pneumatic engine in a autonomous robot
+A conventional electric drivetrain is simpler, more efficient, easier to control, and generally better suited for an autonomous competition robot than a penumatic engine. Rather than treating the disadvantages of pneumatic power as reasons to avoid it, we treated them as engineering challenges.
 
-After the main power switch is activated:
 
-1. Both controllers power on and initialize their respective hardware.
-2. The Cytron initializes UART communication and waits for the Raspberry Pi to finish booting.
-3. Once initialized, the Raspberry Pi sends a `Ready` signal to indicate that it is prepared to communicate.
-4. The Cytron waits for the operator to press the onboard start button.
-5. When the button is pressed, the Cytron sends a `Start` command to the Raspberry Pi.
-6. The Raspberry Pi initializes the vision program and resets the yaw reference to zero.
+But we knew that the limitations of a pneumatic drivetrain were not necessarily limitations of the pneumatic engine alone, but of how the entire drivetrain was designed around it.
 
-This sequence separates powering the robot from initiating autonomous operation, allowing the controllers and sensors to initialize before movement begins.
 
-## Navigation State Machine
+<table>
+<tr>
+<th width="50%">Disadvantage</th>
+<th width="50%">Our Approach</th>
+</tr>
 
-The navigation state machine runs on the Raspberry Pi and uses the camera to identify the colored lines and black boundaries on the competition mat.
+<tr>
+<td>Hard to control the pneumatic engine's speed with a reliable, leak free, compact, and lightweight solution.</td>
+<td>An eCVT allows you to keep the pneumatic engine on a fuel eficient speed while changing the speed of the robot with the secondary electric motor.
 
-The remaining sensors serve different measurement purposes:
+[**Click here to see how we proved this with our own custom engine dyno**](development_process/tests/DYNAMOMETER.md)</td>
+</tr>
 
-- The IMU provides orientation information for heading and turning control.
-- The ultrasonic sensor measures distance to nearby objects.
-- The photointerrupter is positioned at the pneumatic engine flywheel to measure its rotational speed.
-- The motor encoder provides rotational feedback from the electric transmission input.
+<tr>
+<td>A system capable of continuously supplying compressed air to the pneumatic engine would be expensive, heavy, and consume valuable space on the robot.</td>
+<td>Rather than supplying compressed air continuously, we designed the robot around stored compressed air using lightweight, high pressure tanks and a way to regulate the air, allowing the pneumatic engine to operate independently of an onboard compressor.</td>
+</tr>
 
-A complete sensor-placement diagram should identify each sensor's physical location, orientation, and measurement direction relative to the chassis and competition field.
 
-## 5. Sensor Calibration and Signal Processing
 
-### Camera Calibration and Color Thresholding
+<tr>
+<td> Pneumatic engine can only spin a certain direction, depending of how timing is set up.  </td>
+<td>Instead of reversing the pneumatic engine, we designed the drivetrain so that reverse motion is handled electrically through the eCVT. This allows the pneumatic engine to remain optimized for forward operation while maintaining bidirectional control of the robot.</td>
+</tr>
 
-The camera's image-processing pipeline uses grayscale thresholding and HSV color segmentation to identify field boundaries and colored markings.
 
-HSV thresholds were established by sampling the colors as they appeared through the actual camera. This accounts for differences between ideal color values and the values captured under the lighting conditions encountered during testing.
 
-The image-processing development included:
+</table>
 
-1. Separating the white drivable region from the black surrounding boundaries.
-2. Extracting contours to identify the field geometry.
-3. Processing boundary transitions.
-4. Applying HSV thresholds to isolate blue and orange markings.
-5. Using the detected markings as navigation inputs.
+### Pneumatic System Pressure Ratings and Safety Margins
 
-**Development and testing:** [Mat detection and threshold development](development_process/tests/matthreshholddetecting.md)
+| Component | Maximum Rated Pressure (PSI) | Operating Pressure (PSI) | Safety Margin (PSI) |
+|:--|--:|--:|--:|
+| Pneumatic Air Tanks | 110 | 100 | 10 |
+| Pressure Regulator | 145 | 25 | 120 |
+| Pneumatic Engine (Low Pressure Hoses) | 40 | 25 | 15 |
+| E-Valve  | 115 | 25 | 90 |
+| NPT M¼ to NPT F⅛  brass fitting | 1200 | 100 | 1100 |
+| NPT M¼ to NPT M⅛ | 1200 | 100 | 1100 |
+| Brass T fitting, 2x F⅛, 1x M⅛| 1200 | 100 | 1100 |
+| NPT M⅛ to ¹⁄₁₆ hose barb| 120 | 100 | 20 |
+| NPT M⅛ schrader valve| 200 | 100 | 100 |
+| High pressure hoses and conectors| 120 | 100 | 20 |
 
-### Pneumatic Engine RPM Calibration
 
-The photointerrupter measures the time between consecutive interruptions of its optical path.
 
-The flywheel's known number of slots per revolution is used to convert the measured pulse interval into rotational speed. The measurement code was developed progressively, incorporating pulse counting, interval measurement, averaging, and timeout handling.
+Note that the manufacturer's max pressure isn't the [*burst pressure*](Glossary.md), they normally have some headroom before a total failure, so safety the safety margin is actually more.
 
-**Development and testing:** [Flywheel RPM sensor development](development_process/tests/Flywheelencoder.md)
+### Safety on electrical connections
 
-### IMU and Distance Sensor Calibration
+Every exposed electrical solder or conection is protected by a hot glue shell, this makes the connections protected of short circuits.
 
-The IMU and ultrasonic distance sensor provide measurements used by the robot's control system. Their calibration procedures, measurement limits, and any filtering or correction applied to their readings should be documented alongside the final sensor configuration.
+## Failure point considerations
+### Headless run problem
 
-## 6. Sensor Reliability and Failure Considerations
+When making a preview of what the camera sees while making  a run the raspberry pi must be displaying to a monitor, if not, the program will get stuck and not continue, waiting for a preview to open.
 
-Sensor reliability is important because inaccurate measurements can affect both navigation and drivetrain control.
+ We made a "DEBUG MODE" variable that controls whether the program displays previews or not.
 
-The main considerations for AIZA include:
+ When making a headless run, this needs to be 0, if not it will stay stuck and not do anything.
 
-| Component | Potential issue | Engineering consideration |
-|---|---|---|
-| Camera | Changes in lighting, shadows, and color appearance | Thresholds must be tested under representative field conditions |
-| IMU | Measurement noise or orientation drift | Validate yaw readings and heading behavior during turns |
-| Ultrasonic sensor | Invalid or inconsistent distance measurements | Define valid measurement limits and behavior for invalid readings |
-| Photointerrupter | Missed pulses or inconsistent readings | Use interval averaging and a timeout for stopped-engine detection |
-| Motor encoder | Inconsistent or noisy RPM readings | Validate encoder measurements and their effect on transmission control |
-| Voltage regulators | Output voltage drop under peak load | Verify voltage stability during simultaneous component operation |
-| Battery | Voltage sag or insufficient discharge capability | Validate performance under peak electrical demand |
+### Battery Configuration and Capacity Constraints
 
-During development, the camera was upgraded to improve visual coverage, and the flywheel RPM measurement code was refined to improve measurement stability.
+The robot uses interchangeable 7.4 V battery packs with a nominal capacity of 3.5 Ah.
 
-The eCVT development tests also exposed inconsistent readings from the motor encoder. This demonstrated the importance of validating sensor feedback before relying on it for closed-loop drivetrain control.
-
-Further reliability testing should document the measured behavior of each sensor under realistic operating conditions, including the response to invalid readings and communication interruptions.
-
-## 7. Electrical and Sensor Integration
-
-The Raspberry Pi and Cytron Motion 2350 Pro divide the sensing and control tasks between two controllers.
-
-The Raspberry Pi processes camera images and determines navigation commands. The Cytron reads the IMU, distance sensor, and drivetrain encoders while controlling the transmission motor and solenoid.
-
-The controllers exchange information through a 3.3 V UART connection.
-
-**Communication development and testing:** [UART connection tests](development_process/tests/UART.md)
-
-The electrical, sensing, and software systems therefore operate as interconnected subsystems: sensor measurements provide feedback to the control system, while the electrical architecture supplies the power required by the controllers and actuators.
+Due to the limited mass and available space within the chassis, increasing onboard battery capacity was not practical within the current design constraints. Instead, battery packs are swapped and recharged between competition runs.
 
 
 
 
 
+# Reproducibility
+
+### [The COMPLETE step by step guide to build your very own AIZA here.](build_guide/Step01/Step01.md)
+
+### [ALL CAD files](media\CAD)
 
 
+development process
+
+digital notebook
+
+AIZA's code
+
+Cytron:
+
+RaspberryPi:
