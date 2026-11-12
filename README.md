@@ -100,6 +100,30 @@ width=450>
 
 # Mechanical
 
+
+### Chassis 
+
+The chassis is the fourth iteration, it serves as the structural foundation of AIZA, supporting the drivetrain, steering mechanism, pneumatic system, electronics, and sensors.
+
+<div align= "center">
+<img src="media/photos/Chassis.jpeg" width=500>
+
+[more on it here](mechanical/Chassis.md)
+</div>
+
+### Steering
+
+Our steering system needed to be robust since we knew from the start the robot was going to be heavy and big, it had to be made separate from the cassis since our printer didn't have enough space to print the full chassis.
+
+<div align= "center">
+<img src="media\photos\Steering.jpeg
+" width=500>
+
+[more on it here](mechanical/Steering.md)
+</div>
+
+
+
 ### The Pneumatic Engine
 
 Our robot uses a 4 piston, 2 [*crankshaft*](Glossary.md) pneumatic engine. It has a [*flywheel*](Glossary.md) that smoothes out how the engine spins with [*inertia*](Glossary.md), we made it with slots in order to count the interruptions per second with the [*Photointeruptor*](Glossary.md) RPM sensor, which lets us know how fast its going **(more on that later)**.
@@ -353,237 +377,224 @@ The data shows a fairly clear trend: increasing pressure improves the pneumatic 
 | Maximum Speed | 304 RPM |
 | No-Load Runtime | 50 s |
 
-# Electrical
+# Power and Sensor Architecture
 
+AIZA's power and sensing architecture was designed around the electrical requirements of its electropneumatic drivetrain and autonomous navigation system. The electrical system supplies three voltage levels to the robot's components, while the sensing system provides feedback for drivetrain control, orientation measurement, distance detection, and computer vision.
 
-Our robot's components need 3 different voltages.
+This section documents the power distribution, electrical design decisions, sensor selection, calibration, and reliability considerations.
 
-- 7.4V - supplied by two 3.7V batteries in series.
-- 5V - supplied by a buck converter that lowers the voltage from 7.4V to 5V
-- 12V - supplied by the voltage booster  
+## 1. Power Distribution and Electrical Architecture
 
+### Voltage Regulation
+
+AIZA's electrical components require three different voltage levels. Instead of powering every component directly from the battery, we use voltage conversion to provide the required supply rails.
+
+| Voltage rail | Source | Purpose |
+|---|---|---|
+| 7.4 V | Two 3.7 V cells connected in series | Main battery supply and components operating at battery voltage |
+| 5 V | Buck converter stepping down from 7.4 V | Raspberry Pi and 5 V electronics |
+| 12 V | Voltage booster stepping up from 7.4 V | Solenoid valve |
+
+The voltage regulators are shown below.
+
+![Voltage regulators](media/photos/Voltageregulators.PNG)
+
+The use of separate voltage rails allows components with different operating requirements to share the same battery system.
+
+### Battery Configuration and Capacity Constraints
+
+The robot uses interchangeable 7.4 V battery packs with a nominal capacity of 3.5 Ah.
+
+Due to the limited mass and available space within the chassis, increasing onboard battery capacity was not practical within the current design constraints. Instead, battery packs are swapped and recharged between competition runs.
+
+Battery capacity alone does not determine whether a pack can safely supply the robot's peak current. Its discharge rating and voltage behavior under load must also be considered when evaluating the power system.
+
+### Power Budget and Current Distribution
+
+A component-by-component current budget was used to estimate the electrical demand of the robot.
+
+![Maximum current calculations](media/photos/CurrentTable.PNG)
+
+The current budget should account for both normal operating current and peak demand, particularly during motor acceleration and simultaneous actuator operation.
+
+The relevant quantities are:
+
+- Component operating voltage.
+- Typical operating current.
+- Maximum or stall current, where applicable.
+- Total current demand on each voltage rail.
+- Converter output-current ratings.
+- Battery discharge capability.
+
+The total demand must be evaluated separately for each voltage rail. A converter must be capable of supplying the combined load connected to its output, including transient demand.
+
+The current calculations are used to evaluate whether the battery and voltage converters can support the robot's electrical loads without excessive voltage drop or interruption of controller operation.
+
+## 2. Actuator Electronics and Solenoid Driver
+
+### Solenoid Valve Driver
+
+The Air Supply and Management System (ASMS) uses an electrically actuated valve to control the delivery of compressed air to the pneumatic engine.
+
+The solenoid requires 12 V and approximately 800 mA. Since the Cytron's control signal cannot directly supply this load, we designed a dedicated driver circuit to switch the higher-current solenoid circuit.
+
+![MOSFET solenoid driver](media/photos/mosfetdriver.jpg)
+
+The driver uses a MOSFET to control the solenoid through a low-current control signal. Because the selected MOSFET is not a logic-level device, a gate driver is used to provide the required gate voltage.
+
+The circuit also includes two LEDs to indicate its operating state and a diode for electrical protection.
+
+![MOSFET driver circuit](media/photos/MosfetCircuit.PNG)
+
+**Further documentation:** [Solenoid driver design and circuit details](electrical/Cytron_Motion_2350_Pro/Solenoid_driver/README.md)
 
 
 <div align= "center">
-<img src="media/photos/Voltageregulators.PNG" width=500>
+<img src="media/photos/electriccomponentdiagram.png" width="600">
 </div>
-
-### Max current calculations
-<div align= "center">
-<img src="media/photos/CurrentTable.PNG" width=700>
-</div>
-
-The robot uses interchangeable 7.4 V battery packs with a nominal capacity of 3.5 [*Ah*](Glossary.md). Due to the robot's limited mass and available space, additional onboard battery capacity is not practical within the current design constraints. Instead, packs are swapped and recharged between runs.
-
-### Solenoid Driver
-
-Our ASMS uses a e-valve to open or close the passage of air pressure to the pneumatic engine. To supply the 800mA and 12V it needs we needed to make a driver board for it.
+electrical diagram of the components
 
 
-</td>
-</tr>
-</table><table>
-<tr>
-<td width="50%" align="center">
+## 3. Sensor Architecture and Selection
 
-<img src="media/photos/mosfetdriver.jpg" width="300">
+AIZA uses several sensors to obtain information about its environment and drivetrain. Each sensor was selected according to the type of measurement required and the constraints of its application.
 
-</td>
-<td width="60%" valign="top">
+| Sensor | Main purpose | Controller |
+|---|---|---|
+| IMX708 camera | Detects field boundaries and colored markings | Raspberry Pi 3B+ |
+| BNO085 IMU | Measures robot orientation and yaw | Cytron Motion 2350 Pro |
+| Ultrasonic distance sensor | Measures distance to nearby objects | Cytron Motion 2350 Pro |
+| Photointerrupter | Measures pneumatic engine flywheel RPM | Cytron Motion 2350 Pro |
+| Electric motor encoder | Measures transmission motor rotation and RPM | Cytron Motion 2350 Pro |
 
-The solenoid driver uses a MOSFET in order to control a high current circuit with a small current circuit.
+### Camera Selection: IMX708 vs OV5647
 
-Since we used a MOSFET that wasnt logic level, we also used a gate driver, to fully close the MOSFET when the signal is HIGH, two LED to indicate the state and a diode for safety purposes.
+The robot initially used an OV5647 camera. During testing, we found that its 56° field of view did not provide enough visual coverage of the walls and surrounding field geometry.
 
-[More details here.](electrical/Cytron_Motion_2350_Pro/Solenoid_driver/README.md)
-
-
-
-</td>
-</tr>
-</table>
+We therefore upgraded to the IMX708, which provides a 120° field of view. The wider field of view allows more of the surrounding environment to be captured in a single image, providing additional visual information for navigation.
 
 
-
-<div align= "center">
-<img src="media/photos/MosfetCircuit.PNG" width=500>
-
-The Mosfet driver Circuit electrical diagram.
-</div>
-
-
-
-
-
-
-
-
-# Software and Sensors
-
-AIZA uses two controllers, a **Cytron Motion 2350 Pro** and a **Raspberry Pi 3B+**, each responsible for a different part of the robot's operation. This separation allows the Raspberry Pi to handle computationally intensive vision processing while the Cytron manages real-time drivetrain control, sensor acquisition, and actuators.
-
-The two controllers communicate through a UART connection. The Raspberry Pi processes camera information and determines the robot's navigation commands, while the Cytron handles the drivetrain response using feedback from the IMU, distance sensor, and rotary encoders.
-
-
-## System Architecture
-
-| Controller | Main responsibilities |
-|---|---|
-| Raspberry Pi 3B+ | Camera image processing, navigation decisions, and sending movement commands |
-| Cytron Motion 2350 Pro | Transmission control, motor actuation, RPM measurement, IMU and distance sensor readings, and communication with the Raspberry Pi |
-
-### UART Communication
-
-The Raspberry Pi and Cytron exchange information through a 3.3 V UART connection. This allows the Raspberry Pi to send movement commands while receiving sensor information from the Cytron.
-
-
-[See the UART test log here](development_process/tests/UART.md)
-
-## Cytron Motion 2350 Pro
-
-The Cytron is responsible for the drivetrain's low-level control and sensor acquisition. It reads the IMU and distance sensor and communicates their measurements to the Raspberry Pi. It also handles the startup handshake between both controllers.
-
-Its most important task is controlling the eCVT's electric input.
-
-### eCVT Control Logic
-
-The transmission has two inputs: the pneumatic engine and an electric motor. The pneumatic engine's rotational speed is measured using a photointerrupter sensor positioned next to the slotted flywheel. The electric motor has an integrated encoder that provides feedback about its rotational speed.
-
-The Cytron uses these measurements to regulate the electric motor toward a target RPM. The target depends on the movement command received from the Raspberry Pi.
-
-By controlling the electric input relative to the pneumatic engine's speed, the controller changes the combined output of the planetary transmission. This allows the robot's wheel speed to be controlled while maintaining a fuel efficient speed on the pneumatic engine.
-
-
-[Click to see initial test of the eCVT logic.](development_process/tests/eCVT%20logic%20coding.md)
-
-### Pneumatic Engine RPM Measurement
-
-The pneumatic engine's speed is measured using a photointerrupter and a slotted disk attached to the flywheel.
-
-Every time a slot passes through the sensor, the optical path is interrupted, producing a pulse. The Cytron measures the time between consecutive pulses and uses the known number of slots per revolution to calculate RPM.
-
-[Flywheel RPM sensor development](development_process/tests/Flywheelencoder.md)
-
-### Why an optical sensor instead of a Hall-effect sensor?
-
-A Hall-effect sensor detects changes in a magnetic field, usually by sensing a magnet attached to the rotating component. An optical photointerrupter instead detects interruptions in a light path.
-
-[See why we chose the photointerruptor](development_process\logs\Hallvsoptic.md)
-
-
-
-## Raspberry Pi 3B+
-
-The Raspberry Pi is responsible for vision processing and high-level navigation decisions. It receives images from the IMX708 camera, processes the field markings, and determines the direction and speed commands required to navigate the competition field.
-
-The Raspberry Pi sends the Cytron the movement commands through UART, including direction and speed information. It also participates in the startup handshake.
-
-### Camera and Image Processing
-
-
-
-The IMX708 camera captures images at 2304 × 1296 pixels, while the preview is displayed at 640 × 360 pixels to reduce the processing required for visualization.
 
 <div align= "center">
 <table>
   <tr>
-    <td><img src="media\photos\Highfov.PNG" width="200"/></td>
-    <td><img src="media\photos\LowFov.PNG" width="200"/></td>
+    <td><img src="media/photos/Highfov.PNG" width="340"/></td>
+    <td><img src="media\photos\LowFov.PNG" width="340"/></td>
   </tr>
   <tr>
-    <td align="center">IMX708 120° FOV</td>
-    <td align="center">OV5647 56° FOV</td>
+    <td align="center"> IMX708  120° </td>
+    <td align="center"> OV5647  56° </td>
   </tr>
 </table>
 </div>
-We started with the OV5647 but we soon realized that we were missing on a lot of valueable information of the walls of the playfield, so we upgraded to the IMX708.
 
-[IMX708 specs](electrical/Raspberry_π_3B+/Camera/IMX708.md)
+| Camera | Field of view |
+|---|---:|
+| OV5647 | 56° |
+| IMX708 | 120° |
 
-The image-processing pipeline was developed to identify the boundaries of the drivable field and the colored lines used for navigation.
+The IMX708 captures images at 2304 × 1296 pixels. A 640 × 360 preview is used to reduce the processing required for visualization.
 
-The main processing stages are:
+**Documentation:** [IMX708 specifications](electrical/Raspberry_π_3B+/Camera/IMX708.md)
 
-1. **Field segmentation:** Convert the image to grayscale and apply a threshold to distinguish the white drivable area from the black surrounding boundaries.
-2. **Contour extraction:** Use OpenCV contour detection to identify the field's outline.
-3. **Boundary processing:** Identify useful black-to-white transitions and approximate the field boundaries using contour processing and line fitting.
-4. **Color detection:** Convert the filtered image to HSV and apply color thresholds to isolate the blue and orange markings.
-5. **Navigation input:** Use the detected markings and their positions in the image to determine the next navigation action.
+### Flywheel RPM Sensor: Photointerrupter vs Hall-Effect Sensor
 
-The HSV thresholds were established by sampling the colors as they appeared through the actual camera, rather than relying exclusively on the official field color values. This was important because camera readings can vary with lighting conditions.
+The pneumatic engine's rotational speed must be measured to control the eCVT. We considered optical and Hall-effect sensing methods for this measurement.
 
-[Click here to see how the camera processes the field geometry](development_process/tests/matthreshholddetecting.md)
+The selected photointerrupter detects interruptions in a light path as slots in the flywheel disk pass through the sensor. This provides repeated measurement events during each revolution without requiring a magnetic target.
 
+A Hall-effect sensor detects changes in a magnetic field and would require an appropriate magnetic target and mounting arrangement.
 
+We selected the photointerrupter because it works directly with the slotted flywheel design and provides multiple pulses per revolution.
 
-# Strategy
+**Design comparison and trade-offs:** [Photointerrupter vs Hall-effect sensor](development_process/logs/Hallvsoptic.md)
 
-## Before Starting
+### Electric Motor Encoder
 
-The robot uses a main power switch and a separate onboard button to initiate its autonomous program.
+The electric transmission motor has an integrated encoder. Its measurements provide feedback about motor rotation and RPM, allowing the Cytron to adjust the electric input of the eCVT.
 
-After the main power switch is activated:
+The encoder feedback is used together with the pneumatic engine's flywheel RPM measurement to regulate the transmission.
 
-1. Both controllers power on and initialize their respective hardware.
-2. The Cytron initializes UART communication and waits for the Raspberry Pi to finish booting.
-3. Once initialized, the Raspberry Pi sends a `Ready` signal to indicate that it is prepared to communicate.
-4. The Cytron waits for the operator to press the onboard start button.
-5. When the button is pressed, the Cytron sends a `Start` command to the Raspberry Pi.
-6. The Raspberry Pi initializes the vision program and resets the yaw reference to zero.
+**Related development:** [eCVT logic testing](development_process/tests/eCVT%20logic%20coding.md)
 
-This sequence separates powering the robot from initiating autonomous operation, allowing the controllers and sensors to initialize before movement begins.
+## 4. Sensor Placement and Field Coverage
 
-## Navigation State Machine
+Sensor placement affects the quality and usefulness of the information received by the controllers.
 
-The navigation state machine runs on the Raspberry Pi and uses the camera to identify the colored lines and black boundaries on the competition mat.
+The camera's wide field of view was an important factor in its selection because the robot needs to observe field boundaries and colored markings while navigating. The upgrade from the OV5647 to the IMX708 was made after testing revealed insufficient visual coverage with the original camera.
 
-The detected blue and orange markings provide information about the robot's position and the direction it must take at intersections. The order in which these markings are detected is used to determine the next navigation action.
+The remaining sensors serve different measurement purposes:
 
-The camera processing also tracks the position and apparent length of the detected line in the image. This information is used to determine when the robot is approaching a turning point.
+- The IMU provides orientation information for heading and turning control.
+- The ultrasonic sensor measures distance to nearby objects.
+- The photointerrupter is positioned at the pneumatic engine flywheel to measure its rotational speed.
+- The motor encoder provides rotational feedback from the electric transmission input.
 
-The Raspberry Pi uses this information, together with the IMU's yaw measurement, to decide when to initiate and complete a turn.
+A complete sensor-placement diagram should identify each sensor's physical location, orientation, and measurement direction relative to the chassis and competition field.
 
-## Speed State Machine and Transmission Control
+## 5. Sensor Calibration and Signal Processing
 
-The navigation state machine determines the required movement, while the speed state machine translates that decision into a speed command for the Cytron.
+### Camera Calibration and Color Thresholding
 
-The Raspberry Pi sends a speed value from 1 to 7. The Cytron interprets this command and uses the pneumatic engine flywheel RPM and electric motor encoder feedback to regulate the eCVT's electric input.
+The camera's image-processing pipeline uses grayscale thresholding and HSV color segmentation to identify field boundaries and colored markings.
 
-This separates high-level navigation decisions from low-level transmission control:
+HSV thresholds were established by sampling the colors as they appeared through the actual camera. This accounts for differences between ideal color values and the values captured under the lighting conditions encountered during testing.
 
-- **Raspberry Pi:** Determines where the robot should go and the movement command required.
-- **Cytron:** Determines how to control the electric transmission motor to achieve the commanded movement.
+The image-processing development included:
 
-This division also allows the transmission controller to continuously respond to engine-speed changes without requiring the Raspberry Pi to perform the low-level motor regulation.
+1. Separating the white drivable region from the black surrounding boundaries.
+2. Extracting contours to identify the field geometry.
+3. Processing boundary transitions.
+4. Applying HSV thresholds to isolate blue and orange markings.
+5. Using the detected markings as navigation inputs.
 
-## Open Challenge Navigation Sequence
+**Development and testing:** [Mat detection and threshold development](development_process/tests/matthreshholddetecting.md)
 
-After receiving the `Start` command, the Raspberry Pi begins the vision-based navigation program.
+### Pneumatic Engine RPM Calibration
 
-The robot initially moves forward. The camera-processing algorithm traces a reference line starting from the bottom-center region of the image and searches for the blue or orange field markings.
+The photointerrupter measures the time between consecutive interruptions of its optical path.
 
-When a marking is detected, the program records which color was encountered first and tracks its apparent length in pixels.
+The flywheel's known number of slots per revolution is used to convert the measured pulse interval into rotational speed. The measurement code was developed progressively, incorporating pulse counting, interval measurement, averaging, and timeout handling.
 
-As the robot approaches the turning point, the detected line length decreases. When it falls below the 50-pixel threshold, the program records the current yaw angle and initiates the turn.
+**Development and testing:** [Flywheel RPM sensor development](development_process/tests/Flywheelencoder.md)
 
-During the turn, the IMU provides the robot's orientation relative to the recorded yaw reference. Once the measured angular displacement exceeds 90°, the program recenters the robot and resumes straight-line navigation.
+### IMU and Distance Sensor Calibration
 
-This sequence is repeated 11 times to complete the Open Challenge navigation route.
+The IMU and ultrasonic distance sensor provide measurements used by the robot's control system. Their calibration procedures, measurement limits, and any filtering or correction applied to their readings should be documented alongside the final sensor configuration.
 
-## Sensors and Feedback
+## 6. Sensor Reliability and Failure Considerations
 
-| Sensor | Controller | Purpose |
+Sensor reliability is important because inaccurate measurements can affect both navigation and drivetrain control.
+
+The main considerations for AIZA include:
+
+| Component | Potential issue | Engineering consideration |
 |---|---|---|
-| IMX708 camera | Raspberry Pi | Detects field boundaries and colored navigation markings |
-| BNO085 IMU | Cytron | Measures orientation and yaw for turning and heading correction |
-| Ultrasonic distance sensor | Cytron | Measures distance to nearby objects |
-| Flywheel photointerrupter | Cytron | Measures pneumatic engine RPM |
-| Electric motor encoder | Cytron | Measures transmission motor rotation and RPM |
+| Camera | Changes in lighting, shadows, and color appearance | Thresholds must be tested under representative field conditions |
+| IMU | Measurement noise or orientation drift | Validate yaw readings and heading behavior during turns |
+| Ultrasonic sensor | Invalid or inconsistent distance measurements | Define valid measurement limits and behavior for invalid readings |
+| Photointerrupter | Missed pulses or inconsistent readings | Use interval averaging and a timeout for stopped-engine detection |
+| Motor encoder | Inconsistent or noisy RPM readings | Validate encoder measurements and their effect on transmission control |
+| Voltage regulators | Output voltage drop under peak load | Verify voltage stability during simultaneous component operation |
+| Battery | Voltage sag or insufficient discharge capability | Validate performance under peak electrical demand |
 
-The camera provides visual information for navigation, while the IMU and encoders provide feedback about the robot's orientation and drivetrain operation. The ultrasonic sensor supplies additional distance information.
+During development, the camera was upgraded to improve visual coverage, and the flywheel RPM measurement code was refined to improve measurement stability.
 
+The eCVT development tests also exposed inconsistent readings from the motor encoder. This demonstrated the importance of validating sensor feedback before relying on it for closed-loop drivetrain control.
 
+Further reliability testing should document the measured behavior of each sensor under realistic operating conditions, including the response to invalid readings and communication interruptions.
 
+## 7. Electrical and Sensor Integration
+
+The Raspberry Pi and Cytron Motion 2350 Pro divide the sensing and control tasks between two controllers.
+
+The Raspberry Pi processes camera images and determines navigation commands. The Cytron reads the IMU, distance sensor, and drivetrain encoders while controlling the transmission motor and solenoid.
+
+The controllers exchange information through a 3.3 V UART connection.
+
+**Communication development and testing:** [UART connection tests](development_process/tests/UART.md)
+
+The electrical, sensing, and software systems therefore operate as interconnected subsystems: sensor measurements provide feedback to the control system, while the electrical architecture supplies the power required by the controllers and actuators.
 
 
 

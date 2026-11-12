@@ -13,14 +13,14 @@ When our electronic valve is actuated, (letting air through) it has a current dr
 ## Mosfet Solenoid Driver
 
 <div align= "center">
-<img src="../../../media/photos/mosfetdriver.jpg" width=350>
+<img src="../media/photos/mosfetdriver.jpg" width=350>
 </div>
 
 --- 
 
 To fix this problem we need to actuate a high current circuit with a small current circuit, and the following circuit makes this possible.
 <div align= "center">
-<img src="../../../media/photos/MosfetCircuit.PNG" width=350>
+<img src="../media/photos/MosfetCircuit.PNG" width=350>
 </div>
 
 

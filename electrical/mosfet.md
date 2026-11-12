@@ -1,6 +1,6 @@
 # MOSFET 
 <div align= "center">
-<img src="../../../media/photos/mosfet.webp" width=350>
+<img src="../media/photos/mosfet.webp" width=350>
 </div>
 
 ---
