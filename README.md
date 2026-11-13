@@ -204,7 +204,7 @@ An **eCVT** is a electronic continuosly variable transmission, a transmission th
 
 [Click here to see why we used it and trade-offs.](mechanical/eCVT/README.md)
 
-[See the past iterations of the eCVT!](../mechanical/eCVT)
+[See the past iterations of the eCVT!](mechanical/eCVT/README.md)
 </td>
 </tr>
 </table>
@@ -368,7 +368,7 @@ width=450>
 | **IMX708 Camera** | Its 120° field of view provides a wider view of the competition field than the OV5647's 56° field of view. [See here why we chose the IMX](development_process/logs/OVvsIMX.md) | HSV thresholds were established by sampling colors through the actual camera under the available lighting conditions instead of relying exclusively on official field color values. This accounts for differences in lighting and camera color response. [See here for more info](development_process/tests/matthreshholddetecting.md)|
 | **BNO085 IMU** | Provides orientation and yaw measurements used for turning and heading correction. Its onboard sensor fusion provides orientation data without requiring us to combine multiple separate sensors. | We compare an initial value and substract it by that amount, that gives us a value starting from 0 for the rest of the laps, since the sensor used multiple reading in to one, we havent had problems with drift. [See here the Cytron's code to see how we calibrated the samples.](code/Cytron_2350/mainopen.py) |
 | **Ultrasonic Distance Sensor** | Provides distance measurements for detecting nearby obstacles. It offers a straightforward way to measure distance without relying on camera-based detection. | Using the library of the sensor, we checked to see if readings were accurate with a ruler. |
-| **Flywheel Photointerrupter** | Measures the pneumatic engine's flywheel RPM using an optical sensor and a slotted encoder disk. We chose it over a Hall-effect sensor because it is lighter, cheaper, and does not require a metal target or magnet. [See why we chose the photointerruptor](development_process/logs/Hallvsoptic.md) | The flywheel disk uses 16 slots per revolution. RPM is calculated from the time between pulses. To reduce measurement fluctuations, the program stores seven time intervals in a rolling sample queue and averages them before calculating RPM. [Flywheel RPM sensor development](../development_process/tests/Flywheelencoder.md) |
+| **Flywheel Photointerrupter** | Measures the pneumatic engine's flywheel RPM using an optical sensor and a slotted encoder disk. We chose it over a Hall-effect sensor because it is lighter, cheaper, and does not require a metal target or magnet. [See why we chose the photointerruptor](development_process/logs/Hallvsoptic.md) | The flywheel disk uses 16 slots per revolution. RPM is calculated from the time between pulses. To reduce measurement fluctuations, the program stores seven time intervals in a rolling sample queue and averages them before calculating RPM. [Flywheel RPM sensor development](development_process/tests/Flywheelencoder.md) |
 | **eCVT Motor Encoder** |Since we needed to know the electric motor's sped as well, it was better to have a electric motor with an intgrated one rather than a separate flywheel for a second photointerruptor.| We made a rig to calibrate both encoders, we set both in the same axle and found that both were the same reading and consistant, [see the test here.](development_process/tests/eCVTlogiccoding.md) |
 
 
@@ -773,7 +773,7 @@ A chronological record of the robot's evolution, including prototypes, mechanica
 
 ### 3. Complete Digital Engineering Notebook
 
-**[Explore the engineering notebook](development_process/tests/eCVTlogiccoding.md)**
+**[Explore the engineering notebook](development_process/digitalized_notebook)**
 
 A collection of technical documentation, calculations, testing logs, measurements, and observations recorded throughout the development process.
 

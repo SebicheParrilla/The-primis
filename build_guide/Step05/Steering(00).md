@@ -25,7 +25,7 @@ Print every component and note quatities.
 
 
 
-[Once you have all the materials and objects printed go to the next step linked here.](eCVT02.png)
+[Once you have all the materials and objects printed go to the next step linked here.](build_guide/Step05/Steering(01).png)
 
 
 

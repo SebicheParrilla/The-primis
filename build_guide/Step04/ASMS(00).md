@@ -27,7 +27,7 @@ Locate and prepare every component
 | Tephlon tape  | x2 |
 
 
-[Once you have all the materials and objects printed go to the next step linked here.](ASMS (1).png)
+[Once you have all the materials and objects printed go to the next step linked here.](ASMS(1).png)
 
 
 
