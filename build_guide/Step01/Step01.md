@@ -13,7 +13,7 @@ The cost of following the entire instructions.
 </div>
 
 
-[CLick here to start building!](build_guide/Step02/00Lego.md)
+[CLick here to start building!](../Step02/00Lego.md)
 
 
 

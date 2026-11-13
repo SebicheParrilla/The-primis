@@ -16,6 +16,6 @@ We initialy started using the OV5647, but we noticed that it missed out on a lot
 
 
 
-[IMX708 specs](electrical/IMX708.md)
+[IMX708 specs](../../electrical/IMX708.md)
 
-[OV5647 specs](electrical/OV5647.md)
+[OV5647 specs](../../electrical/OV5647.md)

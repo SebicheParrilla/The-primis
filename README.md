@@ -31,36 +31,36 @@ AIZA is our autonomous robot featuring an [*electropneumatic*](Glossary.md) hybr
   <tr>
     <td align="center">
       <b>Front View</b><br>
-      <img src="media\photos\AIZA_Front.jpeg" width="230">
+      <img src="media/photos/AIZA_Front.jpeg" width="230">
     </td>
     <td align="center">
       <b>Rear View</b><br>
-      <img src="media\photos\AIZA_Back.jpeg" width="230">
+      <img src="media/photos/AIZA_Back.jpeg" width="230">
     </td>
     <td align="center">
       <b>Left Side</b><br>
-      <img src="media\photos\AIZA_Left.jpeg" width="230">
+      <img src="media/photos/AIZA_Left.jpeg" width="230">
     </td>
   </tr>
   <tr>
     <td align="center">
       <b>Right Side</b><br>
-      <img src="media\photos\AIZA_Right.jpeg" width="230">
+      <img src="media/photos/AIZA_Right.jpeg" width="230">
     </td>
     <td align="center">
       <b>Top View</b><br>
-      <img src="media\photos\AIZA_Top.jpeg" width="230">
+      <img src="media/photos/AIZA_Top.jpeg" width="230">
     </td>
     <td align="center">
       <b>Bottom view</b><br>
-      <img src="media\photos\AIZA_Bottom.jpeg" width="230">
+      <img src="media/photos/AIZA_Bottom.jpeg" width="230">
     </td>
   </tr>
 </table>
 
 ### [Click here to see past iterations of the robot](development_process/vehicle_iterations)
 
-### [ALL CAD files](media\CAD\STL)
+### [ALL CAD files](media/CAD/STL/Air_tanks_Base_3.stl)
 
 ### Performance videos
 
@@ -71,9 +71,9 @@ AIZA is our autonomous robot featuring an [*electropneumatic*](Glossary.md) hybr
 
 ### WRO code
 
-[**Cytron**](code\Cytron_2350\mainopen.py)
+[**Cytron**](code/Cytron_2350)
 
-[**RaspberryPI**](code\RaspberryPi\Run1(6).py)
+[**RaspberryPI**](code/RaspberryPi)
 
 
 
@@ -97,7 +97,7 @@ Unlike a conventional electric drivetrain, AIZA uses a [*pneumatic engine*](Glos
       <p>
         AIZA's Chassis is the fourth iteration, components are printed in PETG since we needed a sturdy, reliable chassis for heavy and big systems. 
 
-[more on it here](mechanical/Steering.md)
+[more on it here](mechanical/Chassis.md)
       </p>
     </td>
   </tr>
@@ -119,7 +119,7 @@ Unlike a conventional electric drivetrain, AIZA uses a [*pneumatic engine*](Glos
 
 Our robot uses a 4 piston, 2 [*crankshaft*](Glossary.md) pneumatic engine. It has a [*flywheel*](Glossary.md) that smoothes out how the engine spins with [*inertia*](Glossary.md), we made it with slots in order to count the interruptions per second with the [*Photointeruptor*](Glossary.md) RPM sensor, which lets us know how fast its going **(more on that later)**.
 
-[**Click here to understand engine fundamentals**](mechanical\Pneumatics\Penumatic_Engine\README.md)
+[**Click here to understand engine fundamentals**](mechanical/Pneumatics/Penumatic_Engine/README.md)
 
 [**Click here to see past iterations of the engine**](mechanical/Pneumatics/Penumatic_Engine)
 <div align= "center">
@@ -176,7 +176,7 @@ We store the compressed air in 6 lightweight tanks at 100psi of pressure, and jo
 </table>
 
 <div align= "center">
-<img src="media\photos\ASMS.jpeg" width=500>
+<img src="media/photos/ASMS.jpeg" width=500>
 </div>
 
 
@@ -204,7 +204,7 @@ An **eCVT** is a electronic continuosly variable transmission, a transmission th
 
 [Click here to see why we used it and trade-offs.](mechanical/eCVT/README.md)
 
-[See the past iterations of the eCVT!](mechanical\eCVT)
+[See the past iterations of the eCVT!](../mechanical/eCVT)
 </td>
 </tr>
 </table>
@@ -227,7 +227,7 @@ An **eCVT** is a electronic continuosly variable transmission, a transmission th
 
 The second input for the eCVT is this, a makeblock 7.4V Motor with a built in encoder, this allows us to know precisely at what RPM its spining, which is escential for eCVT logic.
 
-[More on calculated gear ratios on software.]()
+[More on calculated gear ratios on software.](development_process/tests/engine_output_ratios.md)
 
 </td>
 </tr>
@@ -368,7 +368,7 @@ width=450>
 | **IMX708 Camera** | Its 120° field of view provides a wider view of the competition field than the OV5647's 56° field of view. [See here why we chose the IMX](development_process/logs/OVvsIMX.md) | HSV thresholds were established by sampling colors through the actual camera under the available lighting conditions instead of relying exclusively on official field color values. This accounts for differences in lighting and camera color response. [See here for more info](development_process/tests/matthreshholddetecting.md)|
 | **BNO085 IMU** | Provides orientation and yaw measurements used for turning and heading correction. Its onboard sensor fusion provides orientation data without requiring us to combine multiple separate sensors. | We compare an initial value and substract it by that amount, that gives us a value starting from 0 for the rest of the laps, since the sensor used multiple reading in to one, we havent had problems with drift. [See here the Cytron's code to see how we calibrated the samples.](code/Cytron_2350/mainopen.py) |
 | **Ultrasonic Distance Sensor** | Provides distance measurements for detecting nearby obstacles. It offers a straightforward way to measure distance without relying on camera-based detection. | Using the library of the sensor, we checked to see if readings were accurate with a ruler. |
-| **Flywheel Photointerrupter** | Measures the pneumatic engine's flywheel RPM using an optical sensor and a slotted encoder disk. We chose it over a Hall-effect sensor because it is lighter, cheaper, and does not require a metal target or magnet. [See why we chose the photointerruptor](development_process\logs\Hallvsoptic.md) | The flywheel disk uses 16 slots per revolution. RPM is calculated from the time between pulses. To reduce measurement fluctuations, the program stores seven time intervals in a rolling sample queue and averages them before calculating RPM. [Flywheel RPM sensor development](development_process/tests/Flywheelencoder.md) |
+| **Flywheel Photointerrupter** | Measures the pneumatic engine's flywheel RPM using an optical sensor and a slotted encoder disk. We chose it over a Hall-effect sensor because it is lighter, cheaper, and does not require a metal target or magnet. [See why we chose the photointerruptor](development_process/logs/Hallvsoptic.md) | The flywheel disk uses 16 slots per revolution. RPM is calculated from the time between pulses. To reduce measurement fluctuations, the program stores seven time intervals in a rolling sample queue and averages them before calculating RPM. [Flywheel RPM sensor development](../development_process/tests/Flywheelencoder.md) |
 | **eCVT Motor Encoder** |Since we needed to know the electric motor's sped as well, it was better to have a electric motor with an intgrated one rather than a separate flywheel for a second photointerruptor.| We made a rig to calibrate both encoders, we set both in the same axle and found that both were the same reading and consistant, [see the test here.](development_process/tests/eCVTlogiccoding.md) |
 
 
@@ -478,7 +478,7 @@ The solenoid driver uses a MOSFET in order to control a high current circuit wit
 
 Since we used a MOSFET that wasnt logic level, we also used a gate driver, to fully close the MOSFET when the signal is HIGH, two LED to indicate the state and a diode for safety purposes.
 
-[More details here.](electrical/Cytron_Motion_2350_Pro/Solenoid_driver/README.md)
+[More details here.](electrical/Solenoid_driver.md)
 
 
 
@@ -539,7 +539,7 @@ The Cytron uses these measurements to regulate the electric motor toward a targe
 By controlling the electric input relative to the pneumatic engine's speed, the controller changes the combined output of the [*planetary transmission*](Glossary.md). This allows the robot's wheel speed to be controlled while maintaining a fuel efficient speed on the pneumatic engine.
 
 
-[See the proof of concept here.](development_process\tests\eCVTlogiccoding.md)
+[See the proof of concept here.](development_process/tests/eCVTlogiccoding.md)
 
 ### Pneumatic Engine RPM Measurement
 
@@ -743,7 +743,14 @@ The robot uses interchangeable 7.4 V battery packs with a nominal capacity of 3.
 
 Due to the limited mass and available space within the chassis, increasing onboard battery capacity was not practical within the current design constraints. Instead, battery packs are swapped and recharged between competition runs.
 
+## Edge cases
 
+### Stored air runs out mid lap
+Even though we have an air duration of about 1 minute, which means that we have 20 seconds per lap of air, air pressure can run out mid lap.
+
+Our robot has a handicap mode, when the solenoid is HIGH and the RPM sensor isn't detecting engine speed, the robot can acknowledge that there isn't any pressure left in the tanks.
+
+Our eCVT acounts for the lack of motion of the pneumatic engine, and compensates. Since we disigned it a way that it can still move the car without the engine.
 
 
 # Reproducibility
@@ -766,7 +773,7 @@ A chronological record of the robot's evolution, including prototypes, mechanica
 
 ### 3. Complete Digital Engineering Notebook
 
-**[Explore the engineering notebook]()**
+**[Explore the engineering notebook](development_process/tests/eCVTlogiccoding.md)**
 
 A collection of technical documentation, calculations, testing logs, measurements, and observations recorded throughout the development process.
 

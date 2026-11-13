@@ -20,4 +20,4 @@ Since almost all LEGO pieces that you bought are going to be used in this step, 
 
 ---
 
-[When you're finished preping the materials you can start asembling the LEGO components in order, page 1 linked here.](Lego1.png)
+[When you're finished preping the materials you can start asembling the LEGO components in order, page 1 linked here.](01Lego.png)

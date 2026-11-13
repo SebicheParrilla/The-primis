@@ -7,9 +7,7 @@ This folder documents the design and theory behind the custom eCVT (electronic C
 The pneumatic engine is difficult to control directly. The eCVT allows the robot to control the output speed by changing the motion of the ring gear.
 
 
-### Term glossary 
 
-[Brake Specific Fuel Consumption (BSFC)]()
 ## Why an eCVT for our pneumatic engine?
 
 ### First, lets see the advantages.
@@ -21,8 +19,8 @@ The pneumatic engine is difficult to control directly. The eCVT allows the robot
 </tr>
 
 <tr>
-<td>Are constrained to a fixed gear ratio per gear, thus in order to gain speed you need theengine to rev higher than the most efecient BSFC.</td>
-<td>eCVT's allow you to have the exact gear ratio you need in order to have the best BSFC. </td>
+<td>Are constrained to a fixed gear ratio per gear, thus in order to gain speed you need theengine to rev higher than the most fuel eficient RPM.</td>
+<td>eCVT's allow you to have the exact gear ratio you need in order to have the best eficient RPM. </td>
 </tr>
 
 
