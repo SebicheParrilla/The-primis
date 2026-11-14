@@ -107,9 +107,9 @@ Unlike a conventional electric drivetrain, AIZA uses a [*pneumatic engine*](Glos
     <td width=60%" valign="top">
       <h3>Steering</h3>
       <p>
-        Our steering system needed to be robust since we knew from the start the robot was going to be heavy and big, it had to be made separate from the chassis since our printer didn't have enough space to print the full chassis.
+        We used a parallel steering geometry, we knew we needed a robust system since we knew from the start the robot was going to be heavy and big, it had to be made separate from the chassis since our printer didn't have enough space to print the full chassis.
 
-[more on it here](mechanical/Steering.md)
+[More info and design trade-offs here](mechanical/Steering.md)
       </p>
     </td>
 </table>
@@ -169,7 +169,7 @@ ASMS FLOWCHART
 
 We store the compressed air in 6 lightweight tanks at 100psi of pressure, and join them all with silicone tubing and "T" adapters.
 
-[why we used it and more details here.](mechanical/eCVT/README.md)
+[why we used it and more details here.](mechanical/Pneumatics/ASMS/Airtanks.md)
 </td>
 </tr>
 </table>

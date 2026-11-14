@@ -1,11 +1,46 @@
-# Steering
-
-Our steering system needed to be robust since we knew from the start the robot was going to be heavy and big, it had to be made separate from the cassis since our printer didn't have enough space to print the full chassis.
-
+# Steering Geometry
 <div align= "center">
 <img src="../media/photos/Steering.jpeg" width=500>
 </div>
 
-We used LEGO knuckles and wheels, to have a consistant and straight drive, something crutial for our robot. 
 
-We used a Servo, a pintman and a center linl to make the wheels steer. 
+
+
+
+## Overview
+
+AIZA uses a parallel steering configuration rather than conventional Ackermann steering. The front wheels are connected through a linkage designed to make both wheels turn in the same direction and at approximately the same steering angle.
+
+We thought simplicity was important for reliability and eficiency.
+
+## Steering Linkage
+
+The steering mechanism uses a center link and a steering base of equal length. This arrangement is intended to maintain symmetrical movement across both front steering assemblies.
+
+
+
+## Track Width
+
+The chassis uses different track widths at the front and rear:
+
+| Parameter | Dimension |
+|---|---:|
+| Front track width | 140 mm |
+| Rear track width | 170 mm |
+| Track width difference | 30 mm |
+
+The front track is 30 mm narrower than the rear track, giving the chassis a tapered footprint when viewed from above.
+
+## Design Considerations
+
+**Advantages**
+- Mechanically straightforward linkage.
+- Synchronized steering movement between both front wheels.
+- Symmetrical steering input.
+- Fewer geometric adjustments than an Ackermann linkage.
+
+**Trade-offs**
+- Both front wheels follow approximately the same steering angle, rather than their individual ideal turning angles.
+- The wheels may experience additional lateral tire scrub during tight turns.
+
+
