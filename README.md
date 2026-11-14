@@ -62,12 +62,11 @@ AIZA is our autonomous robot featuring an [*electropneumatic*](Glossary.md) hybr
 
 ### [ALL CAD files](media/CAD/STL/Air_tanks_Base_3.stl)
 
-### Performance videos
+### Performance video
 
 [Open challenge](https://youtu.be/QNBB8k_d7_M)
 
-*Obstacle challenge
-[(Placeholder)]()
+
 
 ### WRO code
 
@@ -175,6 +174,66 @@ We store the compressed air in 6 lightweight tanks at 100psi of pressure, and jo
 </tr>
 </table>
 
+
+
+
+
+
+</td>
+</tr>
+</table><table>
+<tr>
+<td width="50%" align="center">
+
+<img src="media/photos/regulator.png" width="300">
+
+</td>
+<td width="60%" valign="top">
+
+The regulator allows you to control the maximum pressure that is going to come out of the outlet, this lets us have a high pressure side and a adjustable low pressure side.
+
+[why we used it and more details here.](mechanical/Pneumatics/ASMS/Air_regulator.md)
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+</td>
+</tr>
+</table><table>
+<tr>
+<td width="50%" align="center">
+
+<img src="media/photos/evalve.jpg" width="300">
+
+</td>
+<td width="60%" valign="top">
+
+This component is a normally closed valve that uses a solenoid to open or close the passage of compressed air to the pneumatic engine, allowing us to control wether its ON/OFF.
+
+[why we used it and more details here.](electrical/e-valve.md)
+</td>
+</tr>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div align= "center">
 <img src="media/photos/ASMS.jpeg" width=500>
 </div>
@@ -204,7 +263,7 @@ An **eCVT** is a electronic continuosly variable transmission, a transmission th
 
 [Click here to see why we used it and some trade-offs that come with using it.](mechanical/eCVT/README.md)
 
-[See the past iterations of the eCVT!](mechanical/eCVT/README.md)
+[See the past iterations of the eCVT!](mechanical/eCVT)
 </td>
 </tr>
 </table>
@@ -337,7 +396,7 @@ The data shows a fairly clear trend: increasing pressure improves the pneumatic 
 | Maximum Speed | 304 RPM |
 | No-Load Runtime | 50 s |
 
-[More details on the dynamometer here](development_process/tests/DYNAMOMETER.md)
+### [The full dynamometer test documentation here](development_process/tests/DYNAMOMETER.md)
 
 
 
@@ -707,7 +766,7 @@ But we knew that the limitations of a pneumatic drivetrain were not necessarily 
 
 </table>
 
-### Pneumatic System Pressure Ratings and Safety Margins
+## Pneumatic System Pressure Ratings and Safety Considerations
 
 | Component | Maximum Rated Pressure (PSI) | Operating Pressure (PSI) | Safety Margin (PSI) |
 |:--|--:|--:|--:|
@@ -753,6 +812,15 @@ Even though we have an air duration of about 1 minute, which means that we have 
 Our robot has a handicap mode, when the solenoid is HIGH and the RPM sensor isn't detecting engine speed, the robot can acknowledge that there isn't any pressure left in the tanks.
 
 Our eCVT acounts for the lack of motion of the pneumatic engine, and compensates. Since we disigned it a way that it can still move the car without the engine.
+
+### RPM encoders misreadings
+
+We use enconders to measure the speed of the pneumatic engine and electric motor, and base our transmission logic of that, we can have a bad chain reaction happen in case of a big misreading.
+
+A possible outcome can be the robot adjusting the eCVT ratio for a neutral hold, but instead moving backwards. Or Going backwards isntead of forwards, depending on the severity.
+
+
+
 
 
 # Reproducibility
