@@ -33,5 +33,5 @@ picam2.stop()
 cv2.destroyAllWindows()
 ```
 
-This code captured the frames from the [OV5647](../../electrical/Raspberry_π_3B+/Camera/OV5647.md),  and displayed them in a preview.
+This code captured the frames from the [OV5647](../../electrical/OV5647.md),  and displayed them in a preview.
 

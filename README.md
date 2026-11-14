@@ -97,7 +97,7 @@ Unlike a conventional electric drivetrain, AIZA uses a [*pneumatic engine*](Glos
       <p>
         AIZA's Chassis is the fourth iteration, components are printed in PETG since we needed a sturdy, reliable chassis for heavy and big systems. 
 
-[more on it here](mechanical/Chassis.md)
+[more info, and design trade-offs here](mechanical/Chassis.md)
       </p>
     </td>
   </tr>
@@ -202,7 +202,7 @@ We store the compressed air in 6 lightweight tanks at 100psi of pressure, and jo
 
 An **eCVT** is a electronic continuosly variable transmission, a transmission that pairs two inputs in to a output, and with the proper combining of the inputs, a output with an infinite [*gear ratio*](Glossary.md) is possible without the need of gear shifting. 
 
-[Click here to see why we used it and trade-offs.](mechanical/eCVT/README.md)
+[Click here to see why we used it and some trade-offs that come with using it.](mechanical/eCVT/README.md)
 
 [See the past iterations of the eCVT!](mechanical/eCVT/README.md)
 </td>
@@ -589,7 +589,9 @@ The main processing stages are:
 
 The HSV thresholds were **Calibrated** by sampling the colors as they appeared through the actual camera, rather than relying exclusively on the official field color values. This was important because camera readings can vary with lighting conditions. 
 
-[Click here to see the code we used](media/srs/checkcolorindisplay.py)
+### Modules and Functions
+
+[Click here to see the code we used and all the functions/modules we used.](media/srs/checkcolorindisplay.py)
 
 
 ## Obstacle strategy 

@@ -50,7 +50,7 @@ Print every component and note quatities.
 
 
 
-[Once you have all the materials and objects printed go to the next step linked here.](build_guide/Step06/Chassis(01).png)
+[Once you have all the materials and objects printed go to the next step linked here.](../Chassis(01).png)
 
 
 

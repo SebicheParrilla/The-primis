@@ -14,12 +14,11 @@ The chassis is the fourth iteration, it serves as the structural foundation of A
 Several factors influenced the chassis design:
 
 - **Component integration:** Provide mounting locations for the pneumatic engine, eCVT, differential, steering mechanism, air tanks, batteries, and controllers.
-- **Weight distribution:** Position components to distribute mass appropriately and avoid unnecessarily concentrating weight on one side of the vehicle.
-- **Structural rigidity:** Minimize chassis deformation under drivetrain loads, steering forces, and the weight of the pneumatic system.
+
+
 - **Packaging constraints:** Fit all components within the competition's dimensional restrictions while maintaining accessibility for assembly and maintenance.
 - **Serviceability:** Allow components to be removed, adjusted, or replaced without requiring extensive disassembly of the robot.
-- **Sensor positioning:** Provide stable mounting locations that preserve the camera's field of view and the orientation of other sensors.
-
+- **Sensor positioning:** Provide stable mounting locations that preserve the camera's field of view and not shake when acelerating and decelerating
 
 
 ### Design Trade-offs
@@ -27,10 +26,8 @@ Several factors influenced the chassis design:
 | Design consideration | Benefit | Trade-off |
 |---|---|---|
 | Structural rigidity | Maintains component alignment and reduces deformation | Can increase material usage and weight |
-| Compact component layout | Reduces packaging space and keeps the robot within dimensional limits | Can make maintenance and assembly more difficult |
-| Accessible mounting points | Simplifies maintenance and component replacement | May require additional space |
-| Centralized component placement | Can improve weight distribution | May complicate component access and packaging |
-| Modular mounting | Allows individual subsystems to be removed or modified | Can introduce additional fasteners and structural interfaces |
+| Fits everything within the bundries | Complies with WRO rules!| Almost most mass is concentrated in the ASMS, and on top of that it sit above the Steering system connections |
+| Modular mounting | Allows individual subsystems to be removed or modified | Can introduce additional fasteners and complicate things |
 
 ### Assembly and Reproducibility
 

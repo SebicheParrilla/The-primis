@@ -7,7 +7,7 @@ In this step we'll asemble the entire lego drivetrain and the two front wheel kn
 
 | Component | Code | STL File |
 |---|---|---|
-| Pneumatic Engine's Flywheel | L03 | [Download STL](../media/CAD/STL/Flywheel_2.stl) |
+| Pneumatic Engine's Flywheel | L03 | [Download STL](../../media/CAD/STL/Flywheel_2.stl) |
 
 ### LEGO pieces
 

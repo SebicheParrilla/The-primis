@@ -9,7 +9,7 @@
 
 
 
- The first version of AIZA to have a working and installed [ASMS](../../mechanical/Pneumatics/ASMS/README.md) combined with the [eCVT V5](../../mechanical/eCVT/eCVT_5.0.md). Rather than having a flimsy lego chassis, the chassis was fully modeled and 3d printed, and we bolted the regulator and ASMS to it. Also has a steering linkage style steering system rather than a rack and pinion, and we placed the airtanks over the [Cytron Motion 2350 Pro](../../electrical/Cytron_Motion_2350_Pro/README.md).
+ The first version of AIZA to have a working and installed [ASMS](../../mechanical/Pneumatics/ASMS/README.md) combined with the [eCVT V5](../../mechanical/eCVT/eCVT_5.0&5.1.md). Rather than having a flimsy lego chassis, the chassis was fully modeled and 3d printed, and we bolted the regulator and ASMS to it. Also has a steering linkage style steering system rather than a rack and pinion, and we placed the airtanks over the [Cytron Motion 2350 Pro](../../electrical/Cytron_Motion_2350_Pro.md).
 
 ### ▶️[Watch the AIZA 2.0 in action!](https://youtube.com/shorts/jjrrYu-8fhw)
 

@@ -8,7 +8,7 @@
 
 ---
 
-With the same chassis as the 2.0 but with some minor tweaks, this was the first version of AIZA to have the [Raspberrypi](../../electrical/Raspberry_π_3B+/README.md) installed, along with the [Camera](../../electrical/Raspberry_π_3B+/Camera/IMX708.md), the first time the robot had all of its systems in place, 
+With the same chassis as the 2.0 but with some minor tweaks, this was the first version of AIZA to have the [Raspberrypi](../../electrical/Raspberry_pi_3B+.md) installed, along with the [Camera](../../electrical/IMX708.md), the first time the robot had all of its systems in place, 
 
 
 

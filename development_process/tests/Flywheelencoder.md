@@ -1,6 +1,6 @@
 # Flywheel RPM sensor code testing
 
-We need a reliable way to know the pneumatic engine's speed, we are using the [photointerruptor](../../electrical/Cytron_Motion_2350_Pro/Photointerruptor.md) to count the gaps on our flywheel.
+We need a reliable way to know the pneumatic engine's speed, we are using the [photointerruptor](../../electrical/Photointerruptor.md) to count the gaps on our flywheel.
 
 - We started the code by making a counter go up by every time the sensor goes from HIGH to LOW.   
 [see here](../../media/srs/flywheelencodercounter.py)
@@ -18,9 +18,9 @@ We need a reliable way to know the pneumatic engine's speed, we are using the [p
 
 
 
-    $$
-    RPM = \frac{60,000,000}{t}
-    $$
+    
+    RPM = 60,000,000 / t
+    
 
     Where:
 

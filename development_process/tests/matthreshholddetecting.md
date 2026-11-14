@@ -5,7 +5,7 @@ Our main sensor in charge of navegation of the mat is going to be our camera. Th
 ## Field Boundries
 
 ### Startup
-Since we upgraded the camera from the [OV5647](../../electrical/Raspberry_π_3B+/Camera/OV5647.md) to the [IMX708](../../electrical/Raspberry_π_3B+/Camera/IMX708.md) because of its better resolution and Field of View, we had to capture de frames a differet way, [here's](../../media/srs/imx708start.py) how we coded did it. 
+Since we upgraded the camera from the [OV5647](../../electrical/OV5647.md) to the [IMX708](../../electrical/IMX708.md) because of its better resolution and Field of View, we had to capture de frames a differet way, [here's](../../media/srs/imx708start.py) how we coded did it. 
 
 You'll notice we asked for frames with the sensor on **2304 x 1296** because we need the full FOV, and then displayed it in a preview in only **640 x 360**, we did this so the Raspberry pi doesnt have to display so many pixels on the preview, thus saving on processing power.
 

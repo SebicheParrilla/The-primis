@@ -1,10 +1,10 @@
 # Solenoid Driver Board
 > Part of this document is a digitalized version of one of our engineering notebook's entries. Click here to see them [Page 1](../../../development_process/digitalized_notebook/engineering_notebook_page_034-1.png) [Page 2](../../../development_process/digitalized_notebook/engineering_notebook_page_035-1.png)
 
-Our [ASMS](../../../mechanical/Pneumatics/ASMS/README.md) uses a [electronic valve](e-valve.md) to interrupt the compressed air being fed to the pneumatic engine, This allows us to turn the engine ON/OFF.
+Our [ASMS](../mechanical/Pneumatics/ASMS/README.md) uses a [electronic valve](e-valve.md) to interrupt the compressed air being fed to the pneumatic engine, This allows us to turn the engine ON/OFF.
 
 ## Voltage problem
-This e-valve uses 12V, which is obviously more than our 7.4V batteries, so we used a [voltage booster](../voltage_booster.md) to have a 12V power supply for our electronic valve.
+This e-valve uses 12V, which is obviously more than our 7.4V batteries, so we used a [voltage booster](voltage_booster.md) to have a 12V power supply for our electronic valve.
 
 ## Current problem
 When our electronic valve is actuated, (letting air through) it has a current draw of aprox. 600mA, if we were to connect the valve directly to a pin of the microcontroller, the microcontroller pin would heat up and possibly get toasted, since a safe amount of current for a pin would be 40mA.
